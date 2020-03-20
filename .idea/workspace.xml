@@ -16,7 +16,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="-396">
               <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
             </state>
           </provider>
@@ -64,7 +64,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="882" />
+    <option name="x" value="226" />
     <option name="y" value="82" />
     <option name="width" value="1401" />
     <option name="height" value="929" />
@@ -117,16 +117,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584672320884</updated>
-      <workItem from="1584672322045" duration="2918000" />
+      <workItem from="1584672322045" duration="3518000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2918000" />
+    <option name="totallyTimeSpent" value="3518000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="882" y="82" width="1401" height="929" extended-state="0" />
-    <editor active="true" />
+    <frame x="226" y="82" width="1401" height="929" extended-state="0" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
@@ -175,7 +174,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="-396">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
         </state>
       </provider>
