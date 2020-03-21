@@ -20,31 +20,33 @@
     var CONFIG = {"hostname":"laine001.github.io","root":"/blog/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="菜鸟技术记录与分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Laine">
-<meta property="og:url" content="http://laine001.github.io/blog/index.html">
+  <meta name="description" content="出现次数最多12输入: [1, 13, 43, 42, 13, 1, 3, 4, 4, 23, 13]输出: [1, 13, 43, 42, 3, 4, 23]  1234567891011function unique(arr) &amp;#123;  let hashTable &#x3D; &amp;#123;&amp;#125;  let data &#x3D; []  for (let i &#x3D; 0; len &#x3D; arr.lengt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法笔记">
+<meta property="og:url" content="http://laine001.github.io/blog/2020/03/21/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Laine">
-<meta property="og:description" content="菜鸟技术记录与分享">
+<meta property="og:description" content="出现次数最多12输入: [1, 13, 43, 42, 13, 1, 3, 4, 4, 23, 13]输出: [1, 13, 43, 42, 3, 4, 23]  1234567891011function unique(arr) &amp;#123;  let hashTable &#x3D; &amp;#123;&amp;#125;  let data &#x3D; []  for (let i &#x3D; 0; len &#x3D; arr.lengt">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-21T12:38:26.000Z">
+<meta property="article:modified_time" content="2020-03-21T05:33:55.325Z">
 <meta property="article:author" content="Laine">
 <meta property="article:tag" content="hangzhou">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://laine001.github.io/blog/">
+<link rel="canonical" href="http://laine001.github.io/blog/2020/03/21/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Laine</title>
+  <title>算法笔记 | Laine</title>
   
 
 
@@ -151,10 +153,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://laine001.github.io/blog/2020/03/21/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -168,8 +170,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/03/21/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">算法笔记</a>
+          算法笔记
         </h1>
 
         <div class="post-meta">
@@ -203,7 +204,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h5 id="出现次数最多"><a href="#出现次数最多" class="headerlink" title="出现次数最多"></a>出现次数最多</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">1</span>, <span class="number">13</span>, <span class="number">43</span>, <span class="number">42</span>, <span class="number">13</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">23</span>, <span class="number">13</span>]</span><br><span class="line">输出: [<span class="number">1</span>, <span class="number">13</span>, <span class="number">43</span>, <span class="number">42</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">23</span>]</span><br></pre></td></tr></table></figure>
+        <h5 id="出现次数最多"><a href="#出现次数最多" class="headerlink" title="出现次数最多"></a>出现次数最多</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">1</span>, <span class="number">13</span>, <span class="number">43</span>, <span class="number">42</span>, <span class="number">13</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">23</span>, <span class="number">13</span>]</span><br><span class="line">输出: [<span class="number">1</span>, <span class="number">13</span>, <span class="number">43</span>, <span class="number">42</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">23</span>]</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> hashTable = &#123;&#125;</span><br><span class="line">  <span class="keyword">let</span> data = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!hashTable[arr[i]]) &#123;</span><br><span class="line">      hashTable[arr[i]] = <span class="literal">true</span></span><br><span class="line">      data.push(arr[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -215,259 +216,53 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">处理方法splice、sort、concant、push、unshift、 pop、shift</span><br><span class="line"><span class="comment">// splice(1,3) // 删除索引1后面的三个</span></span><br><span class="line"><span class="comment">// splice(1,0,4) // 删除索引1后面的0个，再在后面添加一个4</span></span><br><span class="line"><span class="comment">// sort() // 数字中两位的数字只按照第一个排序</span></span><br><span class="line"><span class="comment">// sort((a, b) =&gt; return a - b) //</span></span><br><span class="line"><span class="number">1</span>- 冒泡排序算法</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 排序思想：</span></span><br><span class="line"><span class="comment"> * 让数组中的当前项和后一项进行比较，如果当前项比后一项大，则两项</span></span><br><span class="line"><span class="comment"> * 交换位置（让大的靠后）即可</span></span><br><span class="line"><span class="comment"> * 两两比较</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 每次循环会把最大的放到最后面</span></span><br><span class="line"><span class="comment"> * 最多比较length-1次  不用和自己比较</span></span><br><span class="line"><span class="comment"> * 即：第二次循环里由于最后一个已经是最大的，所以没有必要再去比较，第二个循环里的循环长度就是length-1，为0时即比较完毕</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 空间复杂度O(1)</span></span><br><span class="line"><span class="comment"> * 平均时间复杂度O(n*n)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">12</span>, <span class="number">8</span>, <span class="number">24</span>, <span class="number">16</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">ary</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// i控制比较的轮数</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ary.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// j控制每一轮比较的次数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; ary.length - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">      <span class="comment">// 当前项大于后一项，放后面</span></span><br><span class="line">      <span class="keyword">if</span> (ary[j] &gt; ary[j + <span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">let</span> temp = ary[j]</span><br><span class="line">        ary[j] = ary[j + <span class="number">1</span>]</span><br><span class="line">        ary[j + <span class="number">1</span>] = temp</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ary</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bubbleSort(ary) <span class="comment">// [ 1, 8, 12, 16, 24 ]</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>- 插入排序算法</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *  思想：找第一个a为基准循环跟其他数值比较，比a大的放后面</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">12</span>, <span class="number">8</span>, <span class="number">24</span>, <span class="number">16</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  result.push(arr[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> a = arr[i]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j = result.length - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j-- ) &#123;</span><br><span class="line">      <span class="keyword">let</span> b = result[j]</span><br><span class="line">      <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">        result.splice(j + <span class="number">1</span>, <span class="number">0</span>, a)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (j === <span class="number">0</span>) &#123;</span><br><span class="line">        result.unshift(a)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">insertSort(arr)</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
     
     
+        <div class="reward-container">
+  <div>Donate comment here.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/blog/images/wechatpay.png" alt="Laine 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/blog/images/alipay.png" alt="Laine 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://laine001.github.io/blog/2020/03/21/hello-world/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/3.jpg">
-      <meta itemprop="name" content="Laine">
-      <meta itemprop="description" content="菜鸟技术记录与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Laine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/03/21/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-21 05:33:55" itemprop="dateCreated datePublished" datetime="2020-03-21T05:33:55+00:00">2020-03-21</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://laine001.github.io/blog/2019/09/10/EventLoop/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/3.jpg">
-      <meta itemprop="name" content="Laine">
-      <meta itemprop="description" content="菜鸟技术记录与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Laine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2019/09/10/EventLoop/" class="post-title-link" itemprop="url">EventLoop</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-10 22:04:35" itemprop="dateCreated datePublished" datetime="2019-09-10T22:04:35+00:00">2019-09-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-21 05:33:55" itemprop="dateModified" datetime="2020-03-21T05:33:55+00:00">2020-03-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>javascript 事件循环机制</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// javascript 事件循环机制分为浏览器和node事件循环机制</span></span><br><span class="line"><span class="comment">// 浏览器Event Loop是HTML中定义的规范</span></span><br><span class="line"><span class="comment">// Node Event Loop 是由libuv 库实现。</span></span><br><span class="line"></span><br><span class="line">JavaScript有一个main thread 主线程和call-stack调用栈（执行栈），所有的任务都会放到调用栈中等待主线程执行。</span><br><span class="line"><span class="number">1.</span> JS 调用栈</span><br><span class="line">  是一种先进后出的数据结构。当函数被调用时，会被添加到栈中的顶部。</span><br><span class="line">  执行完成之后就从栈顶部移出该函数，直到栈内被清空。</span><br><span class="line"><span class="number">2.</span> 同步任务、异步任务</span><br><span class="line">  JavaScript单线程中的任务分为同步任务和异步任务。</span><br><span class="line">  同步任务会在调用栈中按照顺寻排队等待主线程执行。</span><br><span class="line">  异步任务则会在异步有了结果之后将注册的回调函数添加到任务队列（消息队列）中等待主线程空闲的时候，</span><br><span class="line">  也就是栈内被清空的时候，被读取到栈中等待主线程执行。任务队列是先进先出的数据结构。</span><br><span class="line"><span class="number">3.</span> Event Loop</span><br><span class="line">  调用栈中的同步任务都型执行完毕，栈内被清空了，就代表主线程空闲了，</span><br><span class="line">  这个时候就会去任务队列中按照顺序读取一个任务放入到栈中执行。</span><br><span class="line">  每次栈内被清空，都会去读取任务队列，有就读取执行，一直循环-执行操作，就形成了事件循环。</span><br></pre></td></tr></table></figure>
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/03/21/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://laine001.github.io/blog/2019/08/26/vuex/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/3.jpg">
-      <meta itemprop="name" content="Laine">
-      <meta itemprop="description" content="菜鸟技术记录与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Laine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2019/08/26/vuex/" class="post-title-link" itemprop="url">vuex的使用</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-08-26 16:21:42" itemprop="dateCreated datePublished" datetime="2019-08-26T16:21:42+00:00">2019-08-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-21 05:33:55" itemprop="dateModified" datetime="2020-03-21T05:33:55+00:00">2020-03-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>使用场景</p>
-</blockquote>
-<ol>
-<li>多个视图依赖于同一状态</li>
-<li>来自不同视图的行为需要变更这个同一状态</li>
-</ol>
-<ul>
-<li><p>核心概念</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">state <span class="comment">// 记录状态即多个组件依赖的变量</span></span><br><span class="line">getter <span class="comment">// 相当于单个组件中使用的computed属性，获取state时使用</span></span><br><span class="line">mutation <span class="comment">// 更改state中的状态</span></span><br><span class="line">action <span class="comment">// 提交mutation操作、异步操作</span></span><br><span class="line"><span class="built_in">module</span> <span class="comment">// 分模块使用store</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用步骤</p>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 登录后存取用户信息及组件中取用或改变state信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义state中的属性</span></span><br><span class="line"><span class="keyword">const</span> Store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    username: <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 可用可不用</span></span><br><span class="line">  getters: &#123;</span><br><span class="line">    username(state) &#123;</span><br><span class="line">      <span class="keyword">return</span> state.username</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 提交改变的为一属性</span></span><br><span class="line">  mutations: &#123;</span><br><span class="line">    setUsername(state, value) &#123;</span><br><span class="line">      state.username = value</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    <span class="comment">// setUsernameAsync(state, value) &#123;</span></span><br><span class="line">    <span class="comment">//   state.commit('setUsername', value)</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// 触发mutations中的方法，可做异步操作</span></span><br><span class="line">    setUsernameAsync(&#123; commit &#125;, value) &#123;</span><br><span class="line">      commit(<span class="string">'setUsername'</span>, <span class="string">`<span class="subst">$&#123;value&#125;</span>001`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 视图中提交改变和取用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 登录后设置username的值</span></span><br><span class="line"><span class="keyword">this</span>.$store.dispatch(<span class="string">'setUsername'</span>, <span class="string">'laine'</span>) <span class="comment">// 直接提交mutations中的方法改变</span></span><br><span class="line">或</span><br><span class="line"><span class="keyword">this</span>.$store.commit(<span class="string">'setUsernameAsync'</span>, <span class="string">'laine'</span>) <span class="comment">// 通过commit方法触发actions中的方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他组件中取用state中的值</span></span><br><span class="line"><span class="keyword">this</span>.username = <span class="keyword">this</span>.$store.state.username</span><br><span class="line">或</span><br><span class="line">impot &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">computed: &#123;</span><br><span class="line">  ...mapGetters([<span class="string">'username'</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>vuex存储状态不是持久的即刷新页面会清除所有状态<br>解决方法：</p>
-</blockquote>
-<ul>
-<li>每次提交改变或设置改变时 利用本地存储保存</li>
-<li>store中写入插件vuex-persist<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vuex-persist -S</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VuexPersistence <span class="keyword">from</span> <span class="string">'vuex-persist'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> vuexLocal = <span class="keyword">new</span> VuexPersistence(&#123;</span><br><span class="line">  storage: <span class="built_in">window</span>.localStorage</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 和state、getters等同级</span></span><br><span class="line">plugins: [vuexLocal.plugin]</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -518,6 +313,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#出现次数最多"><span class="nav-number">1.</span> <span class="nav-text">出现次数最多</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#去重"><span class="nav-number">2.</span> <span class="nav-text">去重</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序"><span class="nav-number">3.</span> <span class="nav-text">排序</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
