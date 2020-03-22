@@ -150,6 +150,9 @@ cover:
     - http://p3.qhimg.com/bdm/384_237_0/t01ada77d3073d4e0de.jpg
     - http://p2.qhimg.com/bdm/384_237_0/t01de61c198cfa757ee.jpg
     - http://p1.qhimg.com/bdm/768_474_0/t0102a4f7f4a3a55a99.jpg
+    - http://p3.qhimg.com/bdr/__85/t0150bfcaf8cb08240f.jpg
+    - http://p7.qhimg.com/bdr/__85/t01be8bdf7d16ab5cb8.jpg
+    - http://p0.qhimg.com/bdm/384_237_0/t013214d0b9db1ddb44.jpg
 
 # if the photo link cannot connect,it will show that
 lodding_bg:
@@ -489,12 +492,12 @@ subtitle:
   # source: 3  調用一句網（簡體） http://yijuzhan.com/
   # source: 4  調用今日詩詞（簡體） https://www.jinrishici.com/
   # subtitle 會先顯示 source , 再顯示 sub 的內容
-  source: false
+  # source: true
   # (如果有英文逗號' , '，請使用轉義字符 &#44;)
   # 如果關閉打字效果，subtitle只會顯示sub的第一行文字
   sub:
-    - 今日事&#44;今日畢
-    - Never put off till tomorrow what you can do today
+    - 自由&#44;早晚乱余生
+    - You Can Do Everything And You Can !
 
 # fontawesome圖標
 # 默認使用的是 fontawesome v4版本的圖標
