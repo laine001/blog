@@ -6,7 +6,7 @@
 #   xxx || 連結 || icon
 menu:
   首页: / || fa fa-home
-  文章a: /archives/ || fa fa-archive
+  文章: /archives/ || fa fa-archive
   # Tags: /tags/ || fa fa-tags
   分类: /categories/ || fa fa-folder-open
   链接: /link/ || fa fa-link
