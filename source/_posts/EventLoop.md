@@ -2,6 +2,7 @@
 title: EventLoop
 date: 2019-09-10 22:04:35
 categories: javascript
+type: "categories"
 ---
 
 > javascript 事件循环机制
