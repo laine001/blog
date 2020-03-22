@@ -9,7 +9,7 @@ description: '菜鸟技术记录与分享'
 keywords: 'hangzhou'
 author: Laine
 language: zh-CN
-timezone: ''
+timezone: 'hangzhou'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
