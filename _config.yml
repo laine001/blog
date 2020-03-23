@@ -6,7 +6,7 @@
 title: 嘎嘣跳的博客
 subtitle: '菜鸟的技术记录与分享'
 description: '菜鸟的技术记录与分享'
-keywords: 'hangzhou'
+keywords: 'blog 博客 laine 嘎嘣跳'
 author: Laine
 language: zh-CN
 timezone: ''
@@ -102,3 +102,11 @@ theme: butterfly-a
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
+
+douban:
+  user: 130982727
+  builtin: false
+  movie:
+    title: '那些电影'
+    quote: '你我山前没相见，山后别相逢'
+  timeout: 10000

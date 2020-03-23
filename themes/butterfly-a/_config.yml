@@ -9,11 +9,11 @@ menu:
   文章: /archives/ || fa fa-archive
   # Tags: /tags/ || fa fa-tags
   分类: /categories/ || fa fa-folder-open
-  链接: /link/ || fa fa-link
+  友链: /link/ || fa fa-link
   关于: /about/ || fa fa-heart
   其他||fa fa-list:
     - 音乐 || /music/ || fa fa-music
-    # - Movie || /movies/ || fa fa-film
+    - 电影 || /movies/ || fa fa-film
 
 # Favicon
 # ---------------
@@ -114,7 +114,7 @@ avatar:
 index_img: /blog/img/full-bg.png
 
 # if the banner of page not setting,it will show the top_img
-default_top_img: /img/index.jpg
+default_top_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/movie.jpg
 
 # the banner image of archive page
 archive_img: /blog/img/full-bg.png

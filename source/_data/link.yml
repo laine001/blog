@@ -1,0 +1,16 @@
+class:
+  class_name: wzs
+  link_list:
+    1:
+      name: 
+      link: https://wzs11.github.io
+      avatar: http://p3.qhimg.com/bdr/__85/t0150bfcaf8cb08240f.jpg
+      descr: 王正式的博客
+class2:
+  class_name: wanlinqiang
+  link_list:
+    1:
+      name:
+      link: http://wanlinqiang.com/
+      avatar: http://p7.qhimg.com/bdr/__85/t01be8bdf7d16ab5cb8.jpg
+      descr: coderWan
