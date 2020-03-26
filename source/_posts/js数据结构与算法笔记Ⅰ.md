@@ -107,11 +107,28 @@ class Stack() {
     ...
 }
 ```
-> 缺点:
+> 缺点: _items属性是个数组，可以进行任意的数组操作，例如从中间删除和添加。栈中不该有这种行为
 
-#### 再次改造（WeakMap）
+#### 再次改造（WeakMap数据类型）（可确保属性是私有的）
 
 ```js
 const items = new WeakMap()
 
+class Stack {
+    constructor() {
+        items.set(this, [])
+    }
+    push(ele) {
+        let s = items.get(this)
+        s.push(ele)
+    }
+    pop() {
+        let s = items.get(this)
+        let r = s.pop()
+        return r
+    }
+    ...
+}
+// 利用闭包把stack类包起来
+// ...
 ```
