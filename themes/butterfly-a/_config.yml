@@ -144,15 +144,16 @@ cover:
   position: both
   # 當沒有設置cover時，默認的封面顯示
   default_cover:
+    - https://desk-fd.zol-img.com.cn/t_s1440x900c5/g2/M00/09/0E/ChMlWl5UwraIdXcIAARbXTyzMdkAANdCQMYx9gABFt1941.jpg
     - https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png
+    - https://desk-fd.zol-img.com.cn/t_s1600x900c5/g5/M00/02/07/ChMkJlbKy8iIZQrEAAXhUyPGqhkAALIvQBuCfUABeFr966.jpg
+    - https://desk-fd.zol-img.com.cn/t_s1680x1050c5/g5/M00/02/07/ChMkJlbKy8mIND9bACZDXkg0gcYAALIvQFH1nQAJkN2059.jpg
     - http://p9.qhimg.com/bdm/768_474_0/t01cd97ec806b712059.jpg
     - http://p1.qhimg.com/bdm/384_237_0/t01028e5f2ec69e423d.jpg
-    - http://p3.qhimg.com/bdm/384_237_0/t01ada77d3073d4e0de.jpg
     - http://p2.qhimg.com/bdm/384_237_0/t01de61c198cfa757ee.jpg
     - http://p1.qhimg.com/bdm/768_474_0/t0102a4f7f4a3a55a99.jpg
     - http://p3.qhimg.com/bdr/__85/t0150bfcaf8cb08240f.jpg
     - http://p7.qhimg.com/bdr/__85/t01be8bdf7d16ab5cb8.jpg
-    - http://p0.qhimg.com/bdm/384_237_0/t013214d0b9db1ddb44.jpg
 
 # if the photo link cannot connect,it will show that
 lodding_bg:
