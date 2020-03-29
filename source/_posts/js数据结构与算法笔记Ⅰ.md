@@ -1,7 +1,7 @@
 ---
 title: 栈数据结构
 date: 2020-03-25 20:56:38
-tags: 算法
+tags: 数据结构
 ---
 
 ### 栈是一种遵从先进后出原则的有序结合。
@@ -130,5 +130,14 @@ class Stack {
     ...
 }
 // 利用闭包把stack类包起来
-// ...
+let stack = (function() {
+    const items = new WeakMap()
+    class Stack {
+        constructor() {
+            items.set(this,  [])
+        }
+    }
+    ... // 其他方法
+    return Stack
+})()
 ```
