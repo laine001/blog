@@ -1,7 +1,7 @@
 ---
 layout: using Mock In Vue
 title: Vue中使用mock
-date: 2019-08-02 22:49:03
+date: 2019-02-02 22:49:03
 tags: vue
 categories: javascript
 ---

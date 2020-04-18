@@ -436,11 +436,11 @@ activate_power_mode:
 # 避免卡頓，建議只開啟一個
 # 點擊煙火特效
 fireworks:
-  enable: true
+  enable: false
 
 # 點擊出現愛心
 click_heart:
-  enable: false
+  enable: true
 
 # 點擊出現文字，文字可自行修改
 ClickShowText:
@@ -522,7 +522,7 @@ aside:
 
 # 網站公告
 announcement:
-  content: 感谢访问本站 ^_^
+  content: 感谢访问本小站 ^_^
 
 # busuanzi count for PV / UV in site
 # 訪問人數
@@ -536,7 +536,7 @@ busuanzi:
 # 也可以寫成 年/月/日 時間
 runtimeshow:
   enable: true
-  start_date: 6/7/2018 00:00:00
+  start_date: 6/7/2019 00:00:00
 
 ####   右下角按鈕  ####
 #----------------------------------------------
@@ -550,7 +550,7 @@ translate:
   #延遲時間,若不在前, 要設定延遲翻譯時間, 如100表示100ms,默認為0
   translateDelay: 0
   #博客網址
-  cookieDomain: "https://xxx/"
+  cookieDomain: "https://laine001.github.io/blog/"
   #當文字是簡體時，按鈕顯示的文字
   msgToTraditionalChinese: "繁"
   #當文字是繁體時，按鈕顯示的文字
@@ -621,7 +621,7 @@ note:
   #  - disabled  disable all CSS styles import of note tag.
   style: flat
   icons: true
-  border_radius: 3
+  border_radius: 2
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 0

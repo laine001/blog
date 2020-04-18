@@ -1,6 +1,6 @@
 ---
 title: 解决vue项目打包vendorjs文件过大
-date: 2019-07-17 21:54:44
+date: 2018-02-03 21:54:44
 tags: vue
 categories: javascript
 ---
