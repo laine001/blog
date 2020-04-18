@@ -14,3 +14,11 @@ class2:
       link: http://wanlinqiang.com/
       avatar: http://p7.qhimg.com/bdr/__85/t01be8bdf7d16ab5cb8.jpg
       descr: coderWan
+class3:
+  class_name: 水星导航
+  link_list:
+    1:
+      name:
+      link: http://180.76.104.35/nav/
+      avatar: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587227366829&di=7806632158d8be8fe49d33f6fff77fa8&imgtype=0&src=http%3A%2F%2Fdpic.tiankong.com%2Fp9%2Fjl%2FQJ8620963475.jpg
+      descr: 极简导航
