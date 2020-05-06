@@ -187,7 +187,7 @@ toc:
 
 # auto open the sidebar in 'post'
 auto_open_sidebar:
-  enable: false
+  enable: true
 
 post_copyright:
   enable: true
