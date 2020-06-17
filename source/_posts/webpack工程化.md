@@ -119,15 +119,32 @@ module.exports = function(source) {
 }
 
 // 使用
+// nodemodule中
+// module.exports = {
+//   module: {
+//     rules: [
+//       {
+//         test: /\.sass$/',
+//         use: ['sass-loader', 'node-sass'],
+//         // include
+//       }
+//     ]
+//   }
+// }
+// 自定义文件（vuecli中）
+// vue.config.js
 module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.sass$/',
-        use: ['sass-loader', 'node-sass'],
-        // include
-      }
-    ]
+  configureWebpack: config => {
+    config.module.rules.push({
+      test: /\.txt$/,
+      use: [
+        {
+          // 文件在本地的地址
+          loader: path.resolve('./test-loader'),
+          // options: {}
+        }
+      ]
+    })
   }
 }
 ```
