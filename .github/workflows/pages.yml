@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 16
 
+      - name: Install
+        run: npm install
+
       - name: Build Blog
         run: npm build
         env:
