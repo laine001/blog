@@ -16,6 +16,8 @@ tags: vue
  module // 分模块使用store
 ```
 
+<!-- more -->
+
 - 使用步骤
 
 ```javascript

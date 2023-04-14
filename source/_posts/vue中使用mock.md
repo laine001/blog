@@ -5,11 +5,15 @@ date: 2019-02-02 22:49:03
 tags: vue
 categories: javascript
 ---
+
 配置mock之前需配置好axios
 ```bash
   npm install mock
 ```
 > 基础使用（单独页面中使用）
+
+<!-- more -->
+
 ```html
 <button @click="getData"> 生成数据 </button>
 ```

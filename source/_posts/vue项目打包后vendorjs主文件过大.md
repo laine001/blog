@@ -8,6 +8,8 @@ categories: javascript
 项目上线后，浏览器第一次加载会特别特别慢，network中看到vendorjs文件1.9M，不慢才怪。
 echarts按需引入后，也有1.1M左右，由于对vuecli(2.x)理解不深，自己扒了大量的文档，又测试了很多次，才测试成功，暂时简单记录下。
 
+<!-- more -->
+
 ```javascript
   //可以查看项目文件大小分析
   npm run build --report

@@ -12,6 +12,8 @@ tags: server
 
 - nginx配置
 
+<!-- more -->
+
 ```bash
 server {
     listen       8000;

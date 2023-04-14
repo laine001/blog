@@ -15,6 +15,8 @@ tags: 'vue'
   yarn global add vuepress
 ```
 
+<!-- more -->
+
 ## 博客目录
 
 1. 新建docs文件夹，docs文件夹中新建.vuepress文件夹和README.md文件

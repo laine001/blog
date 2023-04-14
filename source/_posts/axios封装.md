@@ -10,6 +10,9 @@ categories: javascript
 ```bash
 npm install axios --save
 ```
+
+<!-- more -->
+
 > 单独写个文件配置axios,此处命名为request.js
 ```javascript
 import axios from axios

@@ -13,7 +13,7 @@ tags: nodejs
 npm init
 npm install koa
 ```
-
+<!-- more -->
 ```javascript
 const koa = require('koa')
 const app = new koa()

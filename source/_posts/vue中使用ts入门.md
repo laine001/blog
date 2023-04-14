@@ -11,6 +11,7 @@ tags: vue
 - vscode支持友好
 - 微软开源，各大框架源码等皆开始使用ts开发
 
+
 ## vue中使用typescript
 
 - vue create ts-demo时选择Typescript、class-style的语法

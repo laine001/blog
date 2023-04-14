@@ -17,6 +17,9 @@ var cache = {}
 ```
 
 ## 工具函数
+
+<!-- more -->
+
 ```js
 // 错误数据
 function send404(response) {

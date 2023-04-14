@@ -17,6 +17,8 @@ const db = mysql.createConnection({
 })
 ```
 
+<!-- more -->
+
 > 创建数据库表
 
 ```js

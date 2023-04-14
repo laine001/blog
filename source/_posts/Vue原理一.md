@@ -32,6 +32,9 @@ tags: vue
 │   ├── shared ---------------------------- 包含整个代码库通用的代码
 ```
 
+<!-- more -->
+
+
 ## Vue构造函数
 > 目录[/src/instance/index.js](https://github.com/vuejs/vue/blob/dev/src/core/instance/index.js)
 ```js

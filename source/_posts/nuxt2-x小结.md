@@ -9,6 +9,9 @@ tags: 'vue'
 ## 路由守卫
     使用nuxt的middleware功能，中间件允许一个函数在每个页面进入之前运行
     可以在页面中使用/可以全局使用
+    
+<!-- more -->
+
 ```javascript
 // middleware/route.js
 // 接收context作为第一个参数
