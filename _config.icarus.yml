@@ -3,7 +3,7 @@ version: 5.1.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/logo.svg
+logo: /img/avatar.png
 # Page metadata configurations
 head:
     # URL or path to the website's icon
@@ -118,7 +118,7 @@ navbar:
 # Page footer configurations
 footer:
     # Copyright text
-    copyright: © 2019
+    copyright: © 用💖发电
     # Links to be shown on the right of the footer section
     links:
         Creative Commons:
@@ -250,9 +250,9 @@ widgets:
             # Facebook:
             #     icon: fab fa-facebook
             #     url: https://facebook.com
-            # Twitter:
-            #     icon: fab fa-twitter
-            #     url: https://twitter.com
+            Twitter:
+                icon: fab fa-twitter
+                url: https://twitter.com
             # Dribbble:
             #     icon: fab fa-dribbble
             #     url: https://dribbble.com
@@ -283,22 +283,22 @@ widgets:
     # Categories widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
+        position: right
         type: categories
     # Recent posts widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
+        position: right
         type: recent_posts
     # Archives widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
+        position: right
         type: archives
     # Tags widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
+        position: right
         type: tags
         # How to order tags. For example 'name' to order by name in ascending order, and '-length' to order by number of posts in each tags in descending order
         order_by: name
@@ -327,7 +327,7 @@ widgets:
     # Follow.it email subscription widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
+        position: right
         type: followit
         # Hint text under the email input
         description: 
