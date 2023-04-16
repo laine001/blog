@@ -169,7 +169,7 @@ comment:
     # Disqus shortname
     client_id: 589f872f60f860d5c296
     client_secret: c8d38af3417f2ffce09d1a0079daa27bc7c3ca70
-    repo: https://github.com/LAINE001/blog
+    repo: laine001
     owner: laine001
     admin:
         - laine001
