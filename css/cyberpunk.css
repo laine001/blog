@@ -10260,6 +10260,17 @@ body {
   display: flex;
   flex-direction: column;
 }
+body::before {
+  content: '';
+  background: url("https://www.imaegoo.com/img/cute.webp");
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0.2;
+}
 body > .section {
   flex-grow: 1;
 }
@@ -10937,6 +10948,10 @@ a.article-nav-next span {
 }
 .navbar-main {
   box-shadow: none;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.76);
 }
 .navbar-main .navbar-container {
   overflow-x: auto;
@@ -11669,7 +11684,7 @@ figure.highlight.foldable div.level-left {
   .column-left.is-sticky,
   .column-right.is-sticky,
   .column-right-shadow.is-sticky {
-    top: 0.75rem;
+    top: 3.75rem;
     align-self: flex-start;
   }
 }
@@ -12210,7 +12225,7 @@ fieldset[disabled] .button:not(input).is-grey-lightest.is-inverted:before:before
 .navbar-main .navbar-menu .navbar-item:hover,
 .navbar-main .navbar-menu .navbar-item.is-active {
   color: #fcee09;
-  background-color: #000 !important;
+  background-color: rgba(50,115,220,0.38);
 }
 article.article .title a,
 article.media .title a {
