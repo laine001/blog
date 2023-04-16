@@ -29,7 +29,7 @@ class Profile extends Component {
             followTitle,
             socialLinks
         } = this.props;
-        return <div class="card widget" data-type="profile">
+        return <div class="card widget" data-type="profile" style={{ background: 'rgba(255,255,255,0.86)' }}>
             <div class="card-content">
                 <nav class="level">
                     <div class="level-item has-text-centered flex-shrink-1">
@@ -73,7 +73,9 @@ class Profile extends Component {
                     </div>
                 </nav>
                 {followLink ? <div class="level">
-                    <a class="level-item button is-primary is-rounded" href={followLink} target="_blank" rel="noopener">{followTitle}</a>
+                    <a style={{ 'border-radius': '6px' }} class="level-item button is-primary is-rounded" href={followLink} target="_blank" rel="noopener">
+                        {followTitle}
+                    </a>
                 </div> : null}
                 {socialLinks ? this.renderSocialLinks(socialLinks) : null}
             </div>
