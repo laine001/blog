@@ -2,6 +2,7 @@
 title: nuxt2.x小结
 date: 2020-01-22 20:54:37
 tags: 'vue'
+toc: true
 ---
 
 [使用之前先撸遍官方文档](https://zh.nuxtjs.org/guide/installation)
