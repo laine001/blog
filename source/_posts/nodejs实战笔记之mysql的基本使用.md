@@ -2,6 +2,7 @@
 title: nodejs实战笔记-mysql的基本使用
 date: 2020-04-24 21:16:31
 tags: nodejs
+categories: nodejs
 ---
 
 > 连接
