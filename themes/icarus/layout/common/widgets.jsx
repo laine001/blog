@@ -83,7 +83,7 @@ class Widgets extends Component {
         })}>
             {widgets.map(widget => {
                 // widget type is not defined
-                console.log(widgets, 'widgets')
+                // console.log(widgets, 'widgets')
                 if (!widget.type) {
                     return null;
                 }
