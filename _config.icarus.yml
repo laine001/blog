@@ -291,7 +291,8 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
-            ik-ui: https://laine001.github.io/ik-ui/
+            ikun-ui: https://laine001.github.io/ikun-ui/
+            安知鱼:    https://blog.anheyu.com/
             wzs: https://wzs11.github.io
             wanlinqiang: http://wanlinqiang.com/
     # Categories widget configurations
