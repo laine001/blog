@@ -4,6 +4,9 @@ date: 2020-09-08 10:55:18
 tags: nodejs
 categories: nodejs
 toc: true
+
+cover: /img/cover1.webp
+thumbnail: /img/cover1.webp
 ---
 
 ## koa基础初步使用

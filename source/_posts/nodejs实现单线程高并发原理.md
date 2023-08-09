@@ -3,6 +3,9 @@ title: nodejs实现单线程高并发原理
 date: 2020-09-04 17:31:43
 tags: nodejs
 categories: nodejs
+
+cover: /img/cover1.webp
+thumbnail: /img/cover1.webp
 ---
 
 ## 前言

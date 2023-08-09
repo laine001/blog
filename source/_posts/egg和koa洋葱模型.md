@@ -4,6 +4,9 @@ date: 2022-12-08 14:20:22
 tags: nodejs
 categories: nodejs
 toc: true
+
+cover: /img/cover1.webp
+thumbnail: /img/cover1.webp
 ---
 
 

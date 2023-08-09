@@ -3,6 +3,9 @@ title: nodejs实战笔记-常用功能
 date: 2020-03-28 17:42:32
 tags: nodejs
 categories: nodejs
+
+cover: /img/cover1.webp
+thumbnail: /img/cover1.webp
 ---
 
 # 创建静态文件服务器
