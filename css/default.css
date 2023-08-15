@@ -11692,3 +11692,21 @@ figure.highlight.foldable div.level-left {
     padding: 1.5rem 1rem;
   }
 }
+.navbar {
+  background-color: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+}
+.section {
+  padding-top: 16px;
+}
+@media screen and (max-width: 1087px) {
+  .navbar > .container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+  }
+  .navbar-main .navbar-menu {
+    justify-content: flex-start;
+  }
+}
