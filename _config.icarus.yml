@@ -430,6 +430,10 @@ plugins:
 providers:
     # Name or URL template of the JavaScript and/or stylesheet CDN provider
     cdn: jsdelivr
+    # https://ppoffice.github.io/hexo-theme-icarus/Configuration/icarus%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97-cdn%E6%8F%90%E4%BE%9B%E5%95%86/
+    # cdn: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/${package}/${version}/${filename}
+    # https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js
+    # https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/moment.js/2.29.1/locale/ug-cn.min.js
     # Name or URL template of the webfont CDN provider
     fontcdn: google
     # Name or URL of the fontawesome icon font CDN provider

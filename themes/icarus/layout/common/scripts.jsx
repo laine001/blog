@@ -30,9 +30,14 @@ module.exports = class extends Component {
         };`;
 
         return <Fragment>
-            <script src={cdn('jquery', '3.3.1', 'dist/jquery.min.js')}></script>
-            <script src={cdn('moment', '2.22.2', 'min/moment-with-locales.min.js')}></script>
-            {clipboard && <script src={cdn('clipboard', '2.0.4', 'dist/clipboard.min.js')} defer></script>}
+            
+            {/* <script src={cdn('jquery', '3.3.1', 'dist/jquery.min.js')}></script>
+            <script src={cdn('moment', '2.22.2', 'min/moment-with-locales.min.js')}></script> */}
+            {/* {clipboard && <script src={cdn('clipboard', '2.0.4', 'dist/clipboard.min.js')} defer></script>} */}
+            {/* 替换为字节cdn */}
+            <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/moment.js/2.22.2/moment-with-locales.min.js"></script>
+            {clipboard && <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/clipboard.js/2.0.4/clipboard.min.js" defer></script>}
             <script dangerouslySetInnerHTML={{ __html: `moment.locale("${language}");` }}></script>
             <script dangerouslySetInnerHTML={{ __html: embeddedConfig }}></script>
             <script src={url_for('/js/column.js')}></script>
