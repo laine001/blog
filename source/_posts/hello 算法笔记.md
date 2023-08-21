@@ -3,8 +3,8 @@ title: hello 算法笔记
 date: 2023-04-20 21:01:02
 tags: JavaScript
 toc: true
-cover: https://ppoffice.github.io/hexo-theme-icarus/gallery/covers/vector_landscape_1.svg
-thumbnail: https://ppoffice.github.io/hexo-theme-icarus/gallery/covers/vector_landscape_1.svg
+cover: https://www4.bing.com//th?id=OHR.PontdArcole_ZH-CN5348049357_1920x1080.jpg&rf=LaDigue_1920x1080.jpg
+thumbnail: https://www4.bing.com//th?id=OHR.PontdArcole_ZH-CN5348049357_1920x1080.jpg&rf=LaDigue_1920x1080.jpg
 ---
 
 最近开始看朋友推荐的`hello算法`，平时对算法都不太懂，看了这本书的其中一点，有一些还是写的很好的，起码对于算法小白的我，很多比方都比喻的特别好。这里记录下看整本书的笔记。
