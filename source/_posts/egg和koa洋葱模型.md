@@ -5,8 +5,8 @@ tags: nodejs
 categories: nodejs
 toc: true
 
-cover: /img/cover1.webp
-thumbnail: /img/cover1.webp
+cover: https://www4.bing.com//th?id=OHR.TunisiaAmphitheatre_ZH-CN4431856872_UHD.jpg
+thumbnail: https://www4.bing.com//th?id=OHR.TunisiaAmphitheatre_ZH-CN4431856872_UHD.jpg
 ---
 
 

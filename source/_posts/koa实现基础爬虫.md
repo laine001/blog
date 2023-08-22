@@ -5,8 +5,8 @@ tags: nodejs
 categories: nodejs
 toc: true
 
-cover: /img/cover1.webp
-thumbnail: /img/cover1.webp
+cover: https://www4.bing.com//th?id=OHR.PandiZucchero_ZH-CN9833521922_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
+thumbnail: https://www4.bing.com//th?id=OHR.PandiZucchero_ZH-CN9833521922_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
 ---
 
 ## koa基础初步使用

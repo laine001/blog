@@ -4,8 +4,8 @@ date: 2020-09-04 17:31:43
 tags: nodejs
 categories: nodejs
 
-cover: /img/cover1.webp
-thumbnail: /img/cover1.webp
+cover: https://www4.bing.com//th?id=OHR.LiQiu2023_ZH-CN9197909278_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
+thumbnail: https://www4.bing.com//th?id=OHR.LiQiu2023_ZH-CN9197909278_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
 ---
 
 ## 前言

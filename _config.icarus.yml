@@ -249,7 +249,7 @@ widgets:
         # Author's current location
         location: HangZhou
         # URL or path to the avatar image
-        avatar: https://avatars.githubusercontent.com/u/40457081?v=4
+        avatar: https://p9-passport.byteacctimg.com/img/user-avatar/ba644cb2a7ebbe9fb863a2d496a7b89e~90x90.awebp
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar

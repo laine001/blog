@@ -4,8 +4,8 @@ date: 2020-03-28 17:42:32
 tags: nodejs
 categories: nodejs
 
-cover: /img/cover1.webp
-thumbnail: /img/cover1.webp
+cover: https://www4.bing.com//th?id=OHR.PontdArcole_ZH-CN5348049357_1920x1080.jpg&rf=LaDigue_1920x1080.jpg
+thumbnail: https://www4.bing.com//th?id=OHR.PontdArcole_ZH-CN5348049357_1920x1080.jpg&rf=LaDigue_1920x1080.jpg
 ---
 
 # 创建静态文件服务器
