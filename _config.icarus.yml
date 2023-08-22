@@ -3,7 +3,7 @@ version: 5.1.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/avatar.png
+logo: https://p9-passport.byteacctimg.com/img/user-avatar/ba644cb2a7ebbe9fb863a2d496a7b89e~90x90.awebp
 # Page metadata configurations
 head:
     # URL or path to the website's icon
