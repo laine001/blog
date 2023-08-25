@@ -17,7 +17,8 @@ module.exports = class extends Component {
                 {(() => {
                     try {
                         // let Comment = view.require('comment/' + comment.type);
-                        let Comment = require('./gitalk');
+                        // let Comment = require('./gitalk');
+                        let Comment = require('../comment/waline');
                         Comment = Comment.Cacheable ? Comment.Cacheable : Comment;
                         return <Comment config={config} page={page} helper={helper} comment={comment} />;
                     } catch (e) {

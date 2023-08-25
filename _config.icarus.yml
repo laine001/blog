@@ -165,6 +165,28 @@ search:
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
+    type: waline
+    server_url: https://iqx7yacn.api.lncldglobal.com
+    # path: window.location.pathname                # 可选填
+    # lang: zh-CN                                   # 可选填
+    # locale:                                       # 可选填
+        # placeholder: 'Comment here...'
+    # emoji:                                        # 可选填
+    #     - '//unpkg.com/@waline/emojis@1.0.1/weibo'
+    # dark: auto                                    # 可选填
+    # meta: ["nick", "mail", "link"]                # 可选填
+    # required_meta: []                             # 可选填
+    # login: enable                                 # 可选填
+    # word_limit: 0                                 # 可选填
+    # page_size: 10                                 # 可选填
+    # image_uploader: false                         # 可选填
+    # highlighter: true                             # 可选填
+    # tex_renderer: false                           # 可选填
+    # search: false                                 # 可选填
+    # pageview: false                               # 可选填
+    # comment: false                                # 可选填
+    # copyright: true                               # 可选填
+comment2:
     type: gitalk
     # Disqus shortname
     client_id: 589f872f60f860d5c296
