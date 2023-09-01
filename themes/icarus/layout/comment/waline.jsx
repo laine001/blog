@@ -151,8 +151,8 @@
      pageview: comment.pageview,
      comment: comment.comment,
      copyright: comment.copyright,
-     jsUrl: "https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.js",
-     cssUrl: "https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.css"
+     jsUrl: "https://cdn.jsdelivr.net/npm/@waline/client@2.15.6/dist/waline.js",
+     cssUrl: "https://cdn.jsdelivr.net/npm/@waline/client@2.15.6/dist/waline.css"
     //  jsUrl: helper.cdn('@waline/client', '2.6.3', 'dist/waline.js'),
     //  cssUrl: helper.cdn('@waline/client', '2.6.3', 'dist/waline.css'),
    };

@@ -166,7 +166,7 @@ search:
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
     type: waline
-    server_url: https://laine001.github.io/blog/
+    server_url: https://laine-blog-comment.vercel.app/
     # server_url: https://iqx7yacn.api.lncldglobal.com
     # path: window.location.pathname                # 可选填
     # lang: zh-CN                                   # 可选填
