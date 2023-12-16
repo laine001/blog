@@ -3,16 +3,16 @@
 layout: home
 
 hero:
-  name: "My Blog"
-  text: "personal record"
-  tagline: My great project tagline
+  name: "嘎嘣跳的博客"
+  # text: "个人记录"
+  # tagline: My great project tagline
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 查看博客
+      link: /fe/oneline
+    # - theme: alt
+    #   text: API Examples
+      # link: /api-examples
 
 features:
   - title: Feature A

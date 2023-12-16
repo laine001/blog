@@ -1,13 +1,4 @@
----
-title: koa实现基础爬虫
-date: 2020-09-08 10:55:18
-tags: nodejs
-categories: nodejs
-toc: true
-
-cover: https://www4.bing.com//th?id=OHR.PandiZucchero_ZH-CN9833521922_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
-thumbnail: https://www4.bing.com//th?id=OHR.PandiZucchero_ZH-CN9833521922_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
----
+# koa实现基础爬虫
 
 ## koa基础初步使用
 > Koa由Express 幕后的原班人马打造， 致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。 
@@ -18,17 +9,19 @@ thumbnail: https://www4.bing.com//th?id=OHR.PandiZucchero_ZH-CN9833521922_1920x1
 npm init
 npm install koa
 ```
-<!-- more -->
+
 ```javascript
 const koa = require('koa')
 const app = new koa()
 
 // 启动服务 端口为3000
 app.listen(3000)
-// 使用node app命令启动服务
+
 ```
-*这样每次修改文件都需要重新启动服务，可以使用nodemon监听文件变化自动重启*
-*npm install nodemon -g 然后启动服务时，使用nodemon app.js*
+:::tip
+这样每次修改文件都需要重新启动服务，可以使用nodemon监听文件变化自动重启
+`npm install nodemon -g` 然后启动服务时，使用`nodemon app.js`
+:::
 
 ### 响应返回
 ```javascript

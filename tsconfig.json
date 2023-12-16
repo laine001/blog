@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2015", "DOM.Iterable", "DOM"],
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "jsx": "preserve"
+  },
+  "include": ["./**/*.*", "blog/.vitepress/**/*", "blog/.vitepress/config.mts", "@types"],
+  "exclude": ["node_modules"],
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true
+}
