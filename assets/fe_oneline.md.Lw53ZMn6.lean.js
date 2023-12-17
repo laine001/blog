@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as t,R as o}from"./chunks/framework.ZRhsjope.js";const m=JSON.parse('{"title":"一句话问题记录","description":"","frontmatter":{},"headers":[],"relativePath":"fe/oneline.md","filePath":"fe/oneline.md"}'),i={name:"fe/oneline.md"},r=o("",5),n=[r];function c(d,s,l,_,h,f){return a(),t("div",null,n)}const u=e(i,[["render",c]]);export{m as __pageData,u as default};
