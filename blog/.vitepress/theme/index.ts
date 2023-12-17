@@ -17,5 +17,5 @@ export default {
   // },
   enhanceApp({ app, router, siteData }) {
     app.component('git-talk', Comment)
-  }
-} satisfies Theme
+  },
+}
