@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -12,28 +12,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      - name: Install
-        run: npm install
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
 
-      - name: Build Blog
-        run: npm run build
+      - name: Build Blog website
+        run: pnpm docs:build
         env:
-          FORCE_COLOR: 2
+          DOC_ENV: preview
           NODE_OPTIONS: --max-old-space-size=4096
-
-      # - name: Build website
-      #   run: pnpm docs:build
-      #   env:
-      #     DOC_ENV: preview
-      #     NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: docs/.vitepress/dist
