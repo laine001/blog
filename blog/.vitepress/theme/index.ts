@@ -3,7 +3,9 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
+import Comment from '../components/gitalk.vue'
 import './style.css'
+import './custom.css'
 
 export default {
   extends: DefaultTheme,
@@ -14,6 +16,6 @@ export default {
   //   })
   // },
   enhanceApp({ app, router, siteData }) {
-    // ...
+    app.component('git-talk', Comment)
   }
 } satisfies Theme
