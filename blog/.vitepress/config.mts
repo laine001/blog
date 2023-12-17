@@ -3,6 +3,7 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "嘎嘣跳的博客",
+  base: '/blog/',
   description: "个人技术与知识记录",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
