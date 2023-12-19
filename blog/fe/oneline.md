@@ -10,4 +10,18 @@
 
 一般带有登录鉴权的请求，前端需要配置`withCredentials: true`，此时右端 cors 配置如果为`*`，则浏览器依旧会有限制，此时后端应配置请求的来源地址而不是`*`
 
+## target="_blank"的安全漏洞
+使用window.open或a标签target="_blank"，目标页面可以通过`opener.location.replace`跳转钓鱼网站，可通过重置opener可以阻止目标页的相关程序
+```js
+var otherWindow = window.open('https://xxxx')
+otherWindow.opener = null
+otherWindow.location = url
+
+a标签跳转可直接添加属性rel，其中
+// noopener：将 window.opener置空
+// noreferrer：兼容老浏览器/火狐。禁用HTTP头部Referer属性（后端方式）
+<a target="_blank" href="" rel="noopener noreferrer nofollow">xxx</a>
+```
+
 <git-talk />
+
