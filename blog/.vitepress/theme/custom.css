@@ -2,3 +2,50 @@
   margin-top: 10px;
   border-radius: 4px;
 }
+.actions .VPButton.medium {
+  border-radius: 12px;
+  background-color: var(--vp-c-bg-soft);
+  color: #333;
+}
+/* .container .clip {
+  color: var(--vp-c-brand-3);
+  background: none;
+  -webkit-text-fill-color: inherit;
+} */
+.image-container .image-bg {
+  display: none;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 12px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background-color: #cccccc;
+  width: 12px;
+  height: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb8b8;
+}
+.VPSidebar::-webkit-scrollbar {
+  background: transparent;
+  width: 0;
+  height: 10px;
+}
+.VPSidebar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #eee;
+  width: 0;
+  height: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}

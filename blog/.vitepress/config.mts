@@ -6,7 +6,7 @@ export default defineConfig({
   base: '/blog/',
   description: '个人技术与知识记录',
   themeConfig: {
-    logo: 'https://laine001.gitee.io/ikun-ui/layer5.png',
+    // logo: 'https://laine001.gitee.io/ikun-ui/layer5.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
@@ -23,20 +23,20 @@ export default defineConfig({
           },
         ],
       },
-      {
-        text: '服务端',
-        items: [
-          {
-            text: 'Java',
-            link: '/service/java',
-          },
-          {
-            text: 'Docker',
-            link: '/service/java',
-          },
-        ],
-      },
-      { text: '日常blog', link: '/daily/项目工具随手记' },
+      // {
+      //   text: '服务端',
+      //   items: [
+      //     {
+      //       text: 'Java',
+      //       link: '/service/java',
+      //     },
+      //     {
+      //       text: 'Docker',
+      //       link: '/service/java',
+      //     },
+      //   ],
+      // },
+      { text: '日常blog', link: '/daily/nuxt2' },
       { text: '生活记录', link: '/life/medicine' },
     ],
 
@@ -45,7 +45,7 @@ export default defineConfig({
         {
           text: '问题记录',
           items: [
-            { text: '一句话问题', link: '/fe/oneline' },
+            { text: '一句话记录', link: '/fe/oneline' },
             { text: '面试题', link: '/fe/interview' },
           ],
         },
@@ -64,6 +64,15 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: 'css',
+          items: [
+            {
+              text: '一些动画',
+              link: '/fe/css-animation',
+            },
+          ],
+        },
       ],
       '/service': [
         {
@@ -78,6 +87,10 @@ export default defineConfig({
             {
               text: 'nuxt2.x小结',
               link: '/daily/nuxt2',
+            },
+            {
+              text: '搭建组件库仓库',
+              link: '/daily/components-proj',
             },
             {
               text: '项目工具随手记',

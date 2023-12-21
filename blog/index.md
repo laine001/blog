@@ -4,25 +4,24 @@ layout: home
 
 hero:
   name: '嘎嘣跳的博客'
-  text: '菜鸟的日常记录'
-  tagline: Caring is not an advantage .
+  # text: '菜鸟的日常记录'
+  # tagline: Caring is not an advantage .
   image:
-    # src: /logo-with-shadow.png
-    src: https://laine001.gitee.io/ikun-ui/layer5.png
-    alt: IKUN-UI
+    # src: https://laine001.gitee.io/ikun-ui/layer5.png
+    alt: Laine's Blog
   actions:
     - theme: brand
-      text: 查看博客
+      text: ✨ 开 始
       link: /fe/oneline
-    # - theme: alt
-    #   text: API Examples
-    # link: /api-examples
+    - theme: alt
+      text: 👉Github
+      link: https://github.com/LAINE001/blog
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 📒前端
+    details: 记录一些前端的知识点或一些问题
+  - title: 🐔服务端
+    details: 前端之外偶尔学习别的方面的技术的一些学习记录
+  - title: 💕生活
+    details: 生活常识中的一些关于医药、关于中医和植物的一些记录
 ---
