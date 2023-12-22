@@ -5,9 +5,9 @@ import Gitalk from 'gitalk'
 import 'gitalk/dist/gitalk.css'
 onMounted(() => {
   const config = {
-    client_id: '589f872f60f860d5c296',
-    client_secret: 'c8d38af3417f2ffce09d1a0079daa27bc7c3ca70',
-    repo: 'laine001',
+    client_id: '23159cfb3679d024812f',
+    client_secret: '2cfc23c09cc95de676e9d761df15963c1e823b8e',
+    repo: 'blog-comment',
     owner: 'laine001',
     admin: ['laine001'],
     id: md5(location.pathname),
