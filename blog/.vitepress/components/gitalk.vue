@@ -6,7 +6,7 @@ import 'gitalk/dist/gitalk.css'
 onMounted(() => {
   const config = {
     client_id: '23159cfb3679d024812f',
-    client_secret: '2cfc23c09cc95de676e9d761df15963c1e823b8e',
+    client_secret: '923ba2f1928e54f36b052c0bcbbf301d3eb893c8',
     repo: 'blog-comment',
     owner: 'LAINE001',
     admin: ['LAINE001'], 
