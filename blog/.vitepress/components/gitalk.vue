@@ -7,7 +7,7 @@ onMounted(() => {
   const config = {
     client_id: '23159cfb3679d024812f',
     client_secret: '2cfc23c09cc95de676e9d761df15963c1e823b8e',
-    repo: 'blog-comment',
+    repo: 'blog',
     owner: 'laine001',
     admin: ['laine001'],
     id: md5(location.pathname),
