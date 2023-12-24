@@ -1,5 +1,23 @@
 # 项目工具随手记
 
+## 获取路径中的参数
+
+```
+function getQuery(k) {
+  let searchStr = window && window.location.search && location.search.slice(1);
+  if (searchStr) {
+    const searchArr = searchStr.split('&') || [];
+    const result = searchArr.reduce((obj, item) => {
+      let [key, ...value] = item.split('=');
+      let ans = decodeURIComponent(value.join(''));
+      obj[key] = ans;
+      return obj;
+    }, {});
+    return k ? result[k] : result;
+  }
+}
+```
+
 ## eggjs 中使用 mock
 
 > 在项目中新建 mock 文件夹，里面专门存放各个 mock 数据 json 文件
@@ -25,24 +43,6 @@ module.exports = (app) => {
   mockRoutes.forEach((path) => {
     router.all(path, controller.proxy.proxyToMock)
   })
-}
-```
-
-## 获取路径中的参数
-
-```
-function getQuery(k) {
-  let searchStr = window && window.location.search && location.search.slice(1);
-  if (searchStr) {
-    const searchArr = searchStr.split('&') || [];
-    const result = searchArr.reduce((obj, item) => {
-      let [key, ...value] = item.split('=');
-      let ans = decodeURIComponent(value.join(''));
-      obj[key] = ans;
-      return obj;
-    }, {});
-    return k ? result[k] : result;
-  }
 }
 ```
 
