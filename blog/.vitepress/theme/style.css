@@ -50,9 +50,10 @@
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
   --vp-c-brand-1: var(--vp-c-indigo-1);
+  /* --vp-c-brand-1: #002fa7; */
   --vp-c-brand-2: var(--vp-c-indigo-2);
-  /* --vp-c-brand-3: var(--vp-c-indigo-3); */
-  --vp-c-brand-3: #002fa7;
+  --vp-c-brand-3: var(--vp-c-indigo-3);
+  /* --vp-c-brand-3: #002fa7; */
   --vp-c-brand-soft: var(--vp-c-indigo-soft);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
@@ -129,3 +130,9 @@
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
+
+/* :root {
+  --brand-c: #002fa7;
+  --brand-c-darken-1: #002fa7;
+  --brand-c-lighten-1: #002fa7;
+} */

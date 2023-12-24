@@ -1,5 +1,4 @@
-import { defineConfig } from 'vitepress'
-
+import { defineConfig, DefaultTheme } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '嘎嘣跳的博客',
@@ -69,7 +68,7 @@ export default defineConfig({
           items: [
             {
               text: '一些动画',
-              link: '/fe/css-animation',
+              // link: '/fe/css-animation',
             },
           ],
         },
@@ -102,7 +101,7 @@ export default defineConfig({
             },
             {
               text: '基础爬虫',
-              link: '/daily/koa实现基础爬虫',
+              link: '/daily/koa-spider',
             },
             {
               text: '发布订阅',

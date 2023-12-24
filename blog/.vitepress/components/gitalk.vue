@@ -9,8 +9,8 @@ onMounted(() => {
     clientSecret: '923ba2f1928e54f36b052c0bcbbf301d3eb893c8',
     repo: 'blog-comment',
     owner: 'LAINE001',
-    admin: ['LAINE001'], 
-    id: (location.pathname).split("/").pop().substring(0, 49),
+    admin: ['LAINE001'],
+    id: location.pathname.split('/').pop().substring(0, 49),
     distractionFreeMode: false,
   }
   const gitalk = new Gitalk(config)
@@ -23,7 +23,38 @@ onMounted(() => {
   </div>
 </template>
 <style>
-.git-container .git-header-textarea {
+.gt-container .gt-header-textarea {
   color: #000;
+  border-color: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+.gt-container .gt-header-textarea:hover {
+  border-color: var(--vp-c-brand-1);
+}
+.gt-comment-content,
+.gt-comment-avatar img,
+.gt-header-textarea {
+  border-radius: 8px !important;
+}
+
+.gt-container .gt-btn-preview,
+.gt-container .gt-btn-login {
+  border-radius: 8px;
+  background-color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+  color: #fff;
+}
+.gt-container .gt-btn-preview:hover,
+.gt-container .gt-btn-login:hover {
+  background-color: var(--vp-c-brand-3);
+  border-color: var(--vp-c-brand-3);
+}
+.gt-container .gt-svg svg {
+  fill: var(--vp-c-brand-3);
+}
+.gt-ico-text,
+.gt-container .gt-comment-username {
+  color: var(--vp-c-brand-3);
 }
 </style>
