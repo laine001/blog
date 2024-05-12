@@ -1,6 +1,6 @@
 // https://vitepress.dev/guide/custom-theme
 // import { h } from 'vue'
-// import type { Theme } from 'vitepress'
+import type { Theme } from 'vitepress'
 import { inBrowser } from 'vitepress'
 import busuanzi from 'busuanzi.pure.js'
 import DefaultTheme from 'vitepress/theme'
@@ -9,6 +9,7 @@ import Comment from '../components/gitalk.vue'
 import './style.css'
 import './custom.css'
 
+/** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,
   Layout,
@@ -26,4 +27,4 @@ export default {
     }
     app.component('git-talk', Comment)
   },
-}
+} satisfies Theme

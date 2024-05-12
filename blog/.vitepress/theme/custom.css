@@ -32,23 +32,24 @@ body {
   height: 6px;
   border: 2px solid transparent;
   background-clip: content-box;
+  opacity: 0.66;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #bbb8b8;
+  background-color: #bdbdbd;
 }
-.VPSidebar::-webkit-scrollbar {
+/* #VPSidebar::-webkit-scrollbar {
   background: transparent;
-  width: 0;
+  width: 4px;
   height: 10px;
 }
-.VPSidebar::-webkit-scrollbar-thumb {
+#VPSidebar::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: #eee;
-  width: 0;
+  width: 4px;
   height: 6px;
   border: 2px solid transparent;
   background-clip: content-box;
-}
+} */
 
 .VPFeature {
   transition: all 0.28s;
@@ -57,20 +58,24 @@ body {
 .VPFeature:hover {
   border-color: var(--vp-c-brand-3);
 }
-.VPFeature:hover .link-text-value svg {
+.VPFeature .link-text-value .vpi-arrow-right {
   transform: translateX(-2px);
   transition: all 0.28s;
 }
-.VPFeature:hover .link-text-value svg {
+/* .VPFeature:hover .link-text-value .vpi-arrow-right {
+  transform: translateX(-2px);
+  transition: all 0.28s;
+} */
+.VPFeature:hover .link-text-value .vpi-arrow-right {
   transform: translateX(6px);
 }
 
 .pv-uv-count {
-  position: fixed;
+  /* position: fixed;
   left: 0;
   right: 0;
-  bottom: 10px;
-  z-index: 999;
+  bottom: 10px; */
+  /* z-index: 999; */
   font-size: 10px;
   color: #888;
   text-align: center;
