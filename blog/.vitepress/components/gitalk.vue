@@ -12,7 +12,7 @@ onMounted(() => {
     admin: ['LAINE001'],
     id: location.pathname.split('/').pop().substring(0, 49),
     labels: ['GitTalk'],
-    // proxy: '',
+    proxy: 'https://vercel.prohibitorum.top/github_access_token',
     distractionFreeMode: false,
   }
   const gitalk = new Gitalk(config)
