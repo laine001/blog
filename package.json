@@ -4,6 +4,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.44.0",
     "@typescript-eslint/parser": "6.0.0",
+    "busuanzi.pure.js": "^1.0.3",
     "eslint": "8.24.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-standard-with-typescript": "23.0.0",

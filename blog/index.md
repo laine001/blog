@@ -18,10 +18,21 @@ hero:
       link: https://github.com/LAINE001/blog
 
 features:
-  - title: 📒 前端
-    details: 记录一些前端的知识点或一些问题
-  - title: 🐔 服务端
-    details: 别的方面技术的一些学习记录
+  - title: 📒 博客
+    details: 记录一些前端的知识点或者工作中的一些问题
+    link: /fe/oneline.html
+    linkText: 去看看
+  - title: 🐔 学习
+    details: 一些学习记录或者总结，也会有自己精选的博客或者文章
+    link: /fe/oneline.html
+    linkText: 去看看
   - title: 💕 生活
-    details: 生活常识中的一些关于医药或植物等的一些记录
+    details: 一些简单的生活记录
+    link: /fe/medicine.html
+    linkText: 去看看
 ---
+
+<div class="pv-uv-count">
+  本站总访问量 <span id="busuanzi_value_site_pv" /> 次
+  本站访客数 <span id="busuanzi_value_site_uv" /> 人次
+</div>

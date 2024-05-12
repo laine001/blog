@@ -12,7 +12,7 @@ const siderbar = {
       items: [
         {
           text: 'Vue源码学习',
-          link: '/fe/vue3-source-code',
+          link: '/fe/vue2-source-code',
         },
         {
           text: 'React源码学习',

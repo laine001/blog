@@ -11,6 +11,8 @@ onMounted(() => {
     owner: 'LAINE001',
     admin: ['LAINE001'],
     id: location.pathname.split('/').pop().substring(0, 49),
+    labels: ['GitTalk'],
+    // proxy: '',
     distractionFreeMode: false,
   }
   const gitalk = new Gitalk(config)

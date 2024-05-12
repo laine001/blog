@@ -20,7 +20,7 @@ export default defineConfig({
           },
           {
             text: '学习记录',
-            link: '/fe/vue3-source-code',
+            link: '/fe/vue2-source-code',
           },
         ],
       },
