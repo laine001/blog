@@ -10,9 +10,9 @@ onMounted(() => {
     repo: 'blog-comment',
     owner: 'LAINE001',
     admin: ['LAINE001'],
-    id: location.pathname.split('/').pop().substring(0, 49),
+    id: location.pathname,
     labels: ['GitTalk'],
-    proxy: 'https://vercel.prohibitorum.top/github_access_token',
+    proxy: 'https://mellifluous-bombolone-049a57.netlify.app/github_access_token',
     distractionFreeMode: false,
   }
   const gitalk = new Gitalk(config)
