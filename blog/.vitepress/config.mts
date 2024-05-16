@@ -11,7 +11,7 @@ args.forEach((arg) => {
 });
 export default defineConfig({
   title: '嘎嘣跳的博客',
-  base: env ? '/blog/' : '/',
+  base: env === 'netlify' ? '/' : '/blog/',
   description: '个人技术与知识记录',
   cleanUrls: true,
   lastUpdated: true,
