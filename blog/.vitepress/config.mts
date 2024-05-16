@@ -1,9 +1,17 @@
 import { defineConfig, DefaultTheme } from 'vitepress'
 import siderbar from './config/siderbar'
 // https://vitepress.dev/reference/site-config
+
+const args = process.argv.slice(2);
+let env = '';
+args.forEach((arg) => {
+  if (arg.startsWith('--env=')) {
+    env = arg.split('=')[1]
+  }
+});
 export default defineConfig({
   title: '嘎嘣跳的博客',
-  base: '/blog/',
+  base: env ? '/blog/' : '/',
   description: '个人技术与知识记录',
   cleanUrls: true,
   lastUpdated: true,

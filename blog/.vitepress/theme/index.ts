@@ -19,7 +19,7 @@ export default {
   //   })
   // },
   enhanceApp({ app, router, siteData }) {
-    console.log(busuanzi, 'siteData')
+    // console.log(busuanzi, 'siteData')
     if (inBrowser) {
       router.onAfterRouteChanged = () => {
         busuanzi.fetch()

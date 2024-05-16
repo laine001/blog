@@ -23,6 +23,7 @@
     "docs:dev": "vitepress dev blog",
     "docs:build": "vitepress build blog",
     "docs:preview": "vitepress preview blog",
+    "netlify:build": "vitepress build blog --env=netlify",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.mts --fix",
     "format": "prettier --write --cache .",
     "prepare": "husky install"
