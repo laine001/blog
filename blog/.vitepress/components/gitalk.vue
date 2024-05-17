@@ -34,6 +34,10 @@ onMounted(() => {
 .gt-container .gt-header-textarea:hover {
   border-color: var(--vp-c-brand-1);
 }
+.dark .gt-header-textarea {
+  background: #333;
+  color: var(--vp-c-text-1) !important;
+}
 .gt-comment-content,
 .gt-comment-avatar img,
 .gt-header-textarea {
