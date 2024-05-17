@@ -1,0 +1,46 @@
+import{_ as s,c as n,o as a,a3 as l}from"./chunks/framework.BWtL4YFW.js";const F=JSON.parse('{"title":"nodejs实战笔记-mysql的基本使用","description":"","frontmatter":{"title":"nodejs实战笔记-mysql的基本使用","date":"2020-04-24T21:16:31.000Z","tags":"nodejs","categories":"nodejs","cover":"https://www4.bing.com//th?id=OHR.PontdArcole_ZH-CN5348049357_1920x1080.jpg&rf=LaDigue_1920x1080.jpg","thumbnail":"https://www4.bing.com//th?id=OHR.PontdArcole_ZH-CN5348049357_1920x1080.jpg&rf=LaDigue_1920x1080.jpg"},"headers":[],"relativePath":"fe/nodejs实战笔记之mysql的基本使用.md","filePath":"fe/nodejs实战笔记之mysql的基本使用.md","lastUpdated":1715911540000}'),p={name:"fe/nodejs实战笔记之mysql的基本使用.md"},o=l(`<blockquote><p>连接</p></blockquote><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-dark-pro vp-code"><code><span class="line"><span style="color:#C678DD;">const</span><span style="color:#E5C07B;"> mysql</span><span style="color:#56B6C2;"> =</span><span style="color:#61AFEF;"> require</span><span style="color:#ABB2BF;">(</span><span style="color:#98C379;">&#39;mysql&#39;</span><span style="color:#ABB2BF;">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C678DD;">const</span><span style="color:#E5C07B;"> db</span><span style="color:#56B6C2;"> =</span><span style="color:#E5C07B;"> mysql</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">createConnection</span><span style="color:#ABB2BF;">({</span></span>
+<span class="line"><span style="color:#E06C75;">  host</span><span style="color:#ABB2BF;">:     </span><span style="color:#98C379;">&#39;127.0.0.1&#39;</span><span style="color:#ABB2BF;">,</span></span>
+<span class="line"><span style="color:#E06C75;">  user</span><span style="color:#ABB2BF;">:     </span><span style="color:#98C379;">&#39;root&#39;</span><span style="color:#ABB2BF;">,</span></span>
+<span class="line"><span style="color:#E06C75;">  password</span><span style="color:#ABB2BF;">: </span><span style="color:#98C379;">&#39;root&#39;</span><span style="color:#ABB2BF;">,</span></span>
+<span class="line"><span style="color:#E06C75;">  database</span><span style="color:#ABB2BF;">: </span><span style="color:#98C379;">&#39;myblog&#39;</span></span>
+<span class="line"><span style="color:#ABB2BF;">})</span></span></code></pre></div><blockquote><p>创建数据库表</p></blockquote><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-dark-pro vp-code"><code><span class="line"><span style="color:#E5C07B;">db</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">query</span><span style="color:#ABB2BF;">(</span></span>
+<span class="line"><span style="color:#98C379;">  \`CREATE TABLE IF NOT EXISTS work (</span></span>
+<span class="line"><span style="color:#98C379;">  id INT(10) NOT NULL AUTO_INCREMENT,</span></span>
+<span class="line"><span style="color:#98C379;">  hours DECIMAL(5,2) DEFAULT 0,</span></span>
+<span class="line"><span style="color:#98C379;">  date DATE,</span></span>
+<span class="line"><span style="color:#98C379;">  desc LOGGTEXT,</span></span>
+<span class="line"><span style="color:#98C379;">  PRIMARY KEY(id))\`</span><span style="color:#ABB2BF;">,</span></span>
+<span class="line"><span style="color:#C678DD;">  function</span><span style="color:#ABB2BF;">(</span><span style="color:#E06C75;font-style:italic;">err</span><span style="color:#ABB2BF;">) {</span></span>
+<span class="line"><span style="color:#C678DD;">    if</span><span style="color:#ABB2BF;"> (</span><span style="color:#E06C75;">err</span><span style="color:#ABB2BF;">) </span><span style="color:#C678DD;">throw</span><span style="color:#E06C75;"> err</span></span>
+<span class="line"><span style="color:#E5C07B;">    console</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">log</span><span style="color:#ABB2BF;">(</span><span style="color:#98C379;">&#39;server started&#39;</span><span style="color:#ABB2BF;">)</span></span>
+<span class="line"><span style="color:#E5C07B;">    server</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">listen</span><span style="color:#ABB2BF;">(</span><span style="color:#D19A66;">3000</span><span style="color:#ABB2BF;">, </span><span style="color:#98C379;">&#39;127.0.0.1&#39;</span><span style="color:#ABB2BF;">)</span></span>
+<span class="line"><span style="color:#ABB2BF;">  }</span></span>
+<span class="line"><span style="color:#ABB2BF;">)</span></span></code></pre></div><blockquote><p>常用操作</p></blockquote><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-dark-pro vp-code"><code><span class="line"><span style="color:#E5C07B;">exports</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">add</span><span style="color:#56B6C2;"> =</span><span style="color:#ABB2BF;"> (</span><span style="color:#E06C75;font-style:italic;">db</span><span style="color:#ABB2BF;">, </span><span style="color:#E06C75;font-style:italic;">req</span><span style="color:#ABB2BF;">, </span><span style="color:#E06C75;font-style:italic;">res</span><span style="color:#ABB2BF;">) </span><span style="color:#C678DD;">=&gt;</span><span style="color:#ABB2BF;"> {</span></span>
+<span class="line"><span style="color:#E5C07B;">  db</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">query</span><span style="color:#ABB2BF;">(</span></span>
+<span class="line"><span style="color:#98C379;">    \`ININSERT INTO work (hours, date, desc)</span></span>
+<span class="line"><span style="color:#98C379;">    VALUES (?,?,?)</span></span>
+<span class="line"><span style="color:#98C379;">    [hoursVal,dateval,descVal]\`</span></span>
+<span class="line"><span style="color:#ABB2BF;">  )</span></span>
+<span class="line"><span style="color:#ABB2BF;">}</span></span>
+<span class="line"><span style="color:#E5C07B;">exports</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">delete</span><span style="color:#56B6C2;"> =</span><span style="color:#ABB2BF;"> (</span><span style="color:#E06C75;font-style:italic;">db</span><span style="color:#ABB2BF;">, </span><span style="color:#E06C75;font-style:italic;">req</span><span style="color:#ABB2BF;">, </span><span style="color:#E06C75;font-style:italic;">res</span><span style="color:#ABB2BF;">) </span><span style="color:#C678DD;">=&gt;</span><span style="color:#ABB2BF;"> {</span></span>
+<span class="line"><span style="color:#E5C07B;">  db</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">query</span><span style="color:#ABB2BF;">(</span></span>
+<span class="line"><span style="color:#98C379;">    \`</span></span>
+<span class="line"><span style="color:#98C379;">      DELETE FROM work WHERE id=?</span></span>
+<span class="line"><span style="color:#98C379;">      [idVal]</span></span>
+<span class="line"><span style="color:#98C379;">    \`</span></span>
+<span class="line"><span style="color:#ABB2BF;">  )</span></span>
+<span class="line"><span style="color:#ABB2BF;">}</span></span>
+<span class="line"><span style="color:#E5C07B;">exports</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">show</span><span style="color:#56B6C2;"> =</span><span style="color:#ABB2BF;"> (</span><span style="color:#E06C75;font-style:italic;">db</span><span style="color:#ABB2BF;">, </span><span style="color:#E06C75;font-style:italic;">req</span><span style="color:#ABB2BF;">, </span><span style="color:#E06C75;font-style:italic;">curId</span><span style="color:#ABB2BF;">) </span><span style="color:#C678DD;">=&gt;</span><span style="color:#ABB2BF;"> {</span></span>
+<span class="line"><span style="color:#C678DD;">  const</span><span style="color:#E5C07B;"> query</span><span style="color:#56B6C2;"> =</span><span style="color:#98C379;"> \`</span></span>
+<span class="line"><span style="color:#98C379;">    SELECT * FROM work</span></span>
+<span class="line"><span style="color:#98C379;">    WHERE archived=?</span></span>
+<span class="line"><span style="color:#98C379;">    ORDER BY date DESC</span></span>
+<span class="line"><span style="color:#98C379;">  \`</span></span>
+<span class="line"><span style="color:#C678DD;">  const</span><span style="color:#E5C07B;"> curId</span><span style="color:#56B6C2;"> =</span><span style="color:#E06C75;"> curId</span><span style="color:#C678DD;"> ?</span><span style="color:#D19A66;"> 1</span><span style="color:#C678DD;"> :</span><span style="color:#D19A66;"> 0</span></span>
+<span class="line"><span style="color:#E5C07B;">  db</span><span style="color:#ABB2BF;">.</span><span style="color:#61AFEF;">query</span><span style="color:#ABB2BF;">(</span></span>
+<span class="line"><span style="color:#E06C75;">    query</span><span style="color:#ABB2BF;">,</span></span>
+<span class="line"><span style="color:#ABB2BF;">    [</span><span style="color:#E06C75;">curId</span><span style="color:#ABB2BF;">]</span></span>
+<span class="line"><span style="color:#ABB2BF;">  )</span></span>
+<span class="line"><span style="color:#ABB2BF;">}</span></span></code></pre></div>`,6),e=[o];function c(t,r,B,y,i,C){return a(),n("div",null,e)}const d=s(p,[["render",c]]);export{F as __pageData,d as default};
