@@ -38,6 +38,7 @@ onMounted(() => {
 .dark .gt-header-preview,
 .dark .gt-comment-content {
   background: #333;
+  background-color: #333 !important;
   color: var(--vp-c-text-1) !important;
 }
 .dark .gt-header-textarea:hover {
