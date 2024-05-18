@@ -7,7 +7,7 @@ hero:
   # text: '菜鸟的日常记录'
   # tagline: Caring is not an advantage .
   image:
-    # src: https://laine001.gitee.io/ikun-ui/layer5.png
+    # src: /logo.jpg
     alt: Laine's Blog
   actions:
     - theme: brand
