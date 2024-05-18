@@ -34,13 +34,18 @@ onMounted(() => {
 .gt-container .gt-header-textarea:hover {
   border-color: var(--vp-c-brand-1);
 }
-.dark .gt-header-textarea {
+.dark .gt-header-textarea,
+.dark .gt-header-preview,
+.dark .gt-comment-content {
   background: #333;
   color: var(--vp-c-text-1) !important;
 }
 .dark .gt-header-textarea:hover {
   background: #111;
   border-color: var(--vp-c-brand-1);
+}
+.dark .gt-container .gt-comment-content:hover {
+  box-shadow: none;
 }
 .gt-comment-content,
 .gt-comment-avatar img,
