@@ -1,30 +1,30 @@
 # 纯 css 动画
 
-## 抖动
+## 1
 
 <div class="box1">
   <span class="text">自由早晚乱余生</span>
 </div>
 
-## 弹
+## 🐥
 
 <div class="box2">
   <div class="bounce-top">🏀</div>
 </div>
 
-## 崩~崩崩
+## 3
 
 <div class="box3">
   <span class="heart">❤️</span>
 </div>
 
-## 出现动画
+## 4
 
 <div class="box5">
   <div class="bird">🐥</div>
 </div>
 
-## 转啊转
+## 5
 
 <div class="box4">
   <div class="loader"></div>
