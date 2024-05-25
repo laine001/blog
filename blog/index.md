@@ -32,39 +32,37 @@ features:
     linkText: 去看看
 ---
 
-<script>
+<script setup lang="ts">
+import { onMounted } from 'vue'
 import confetti from 'canvas-confetti'
-// console.log(confetti)
-// confetti({
-//   particleCount: 100,
-//   spread: 170,
-//   origin: { y: 0.6 }
-// });
+onMounted(() => {
+  confetti({
+    particleCount: 100,
+    spread: 170,
+    origin: { y: 0.6 },
+  })
+})
 
-
-var end = Date.now() + (1 * 260);
-
-// go Buckeyes!
+// var end = Date.now() + (1 * 260);
 // var colors = ['#3451b2', '#6f42c1', '#299764'];
+// (function frame() {
+//   confetti({
+//     particleCount: 2,
+//     angle: 60,
+//     spread: 55,
+//     origin: { x: 0 },
+//     // colors: colors ?? []
+//   });
+//   confetti({
+//     particleCount: 2,
+//     angle: 120,
+//     spread: 55,
+//     origin: { x: 1 },
+//     // colors: colors ?? []
+//   });
 
-(function frame() {
-  confetti({
-    particleCount: 2,
-    angle: 60,
-    spread: 55,
-    origin: { x: 0 },
-    // colors: colors ?? []
-  });
-  confetti({
-    particleCount: 2,
-    angle: 120,
-    spread: 55,
-    origin: { x: 1 },
-    // colors: colors ?? []
-  });
-
-  if (Date.now() < end) {
-    requestAnimationFrame(frame);
-  }
-}());
+//   if (Date.now() < end) {
+//     requestAnimationFrame(frame);
+//   }
+// }());
 </script>

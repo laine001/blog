@@ -29,6 +29,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "canvas-confetti": "^1.9.3",
     "gitalk": "^1.8.0",
     "md5": "^2.3.0",
     "vite": "^5.0.10"
