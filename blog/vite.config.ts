@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      external: ['canvas-confetti'],
-    },
-  },
+  // build: {
+  //   rollupOptions: {
+  //     external: ['canvas-confetti'],
+  //   },
+  // },
   server: {
     port: 9529,
   },
