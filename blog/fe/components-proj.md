@@ -9,8 +9,45 @@
 - ✨ 提交代码后的文档部署`git action`，免费站点托管`gitPages` or `vercel` or `netlify`
 - 🚨 another...
 
+<!-- ## 组件实现
+
+普通组件通常在使用的时候直接引用，ui 库或者通用组件作为全局组件需要暴露出`install`函数。
+例如以下的`button组件`，
+:::tip
+常规使用时，直接 `import MyButton from 'xxx'`。 然后`<MyButton>按钮</MyButton>`
+:::
+
+通用组件
+
+<button class="my-button">按钮</button>
+
+:::details
+
+```vue
+<template>
+  <button class="my-button">按钮</button>
+</template>
+<style>
+.my-button {
+  padding: 2px 14px;
+  background: pink;
+  border-radius: 8px;
+}
+</style>
+```
+
+::: -->
+
 ## IKun UI
 
 [文档 🏀](https://github.com/LAINE001/ikun-ui)
 
 <git-talk />
+
+<!-- <style>
+.my-button {
+  padding: 2px 14px;
+  background: pink;
+  border-radius: 8px;
+}
+</style> -->
