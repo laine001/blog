@@ -7,14 +7,10 @@
   /* background-color: var(--vp-c-bg-soft); */
   /* color: #333; */
 }
-/* .container .clip {
-  color: var(--vp-c-brand-3);
-  background: none;
-  -webkit-text-fill-color: inherit;
-} */
-/* .image-container .image-bg {
-  display: none;
-} */
+
+.VPMenu {
+  border: none !important;
+}
 
 body {
   overflow-y: scroll;

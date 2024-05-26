@@ -36,11 +36,13 @@ features:
 import { onMounted } from 'vue'
 import confetti from 'canvas-confetti'
 onMounted(() => {
-  confetti({
-    particleCount: 100,
-    spread: 170,
-    origin: { y: 0.6 },
-  })
+  setTimeout(() => {
+    confetti({
+      particleCount: 100,
+      spread: 170,
+      origin: { y: 0.6 },
+    })
+  }, 200)
 })
 
 // var end = Date.now() + (1 * 260);
