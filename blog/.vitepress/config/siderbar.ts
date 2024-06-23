@@ -79,6 +79,10 @@ const siderbar = {
           text: '常见药物相关',
           link: '/life/medicine',
         },
+        {
+          text: '泰国行',
+          link: '/life/thailand',
+        },
       ],
     },
   ],

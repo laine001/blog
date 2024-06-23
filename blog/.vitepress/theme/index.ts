@@ -1,15 +1,15 @@
 // https://vitepress.dev/guide/custom-theme
-// import { h } from 'vue'
-import type { Theme } from 'vitepress'
+
 import { inBrowser } from 'vitepress'
 import busuanzi from 'busuanzi.pure.js'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 import Comment from '../components/gitalk.vue'
+import { Image, ImagePreviewGroup } from 'ant-design-vue'
 import './style.css'
 import './custom.css'
 
-/** @type {import('vitepress').Theme} */
+// /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,
   Layout,
@@ -18,13 +18,14 @@ export default {
   //     // https://vitepress.dev/guide/extending-default-theme#layout-slots
   //   })
   // },
-  enhanceApp({ app, router, siteData }) {
-    // console.log(busuanzi, 'siteData')
+  enhanceApp({ app, router }) {
     if (inBrowser) {
       router.onAfterRouteChanged = () => {
         busuanzi.fetch()
       }
     }
     app.component('git-talk', Comment)
+    app.component('a-image', Image)
+    app.component('a-image-preview-group', ImagePreviewGroup)
   },
-} satisfies Theme
+}
