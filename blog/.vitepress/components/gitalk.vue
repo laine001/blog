@@ -12,7 +12,7 @@ onMounted(() => {
     admin: ['LAINE001'],
     id: location.pathname,
     labels: ['GitTalk'],
-    proxy: 'https://mellifluous-bombolone-049a57.netlify.app/github_access_token',
+    proxy: 'https://strong-caramel-969805.netlify.app/github_access_token',
     distractionFreeMode: false,
   }
   const gitalk = new Gitalk(config)
