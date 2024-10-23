@@ -83,6 +83,10 @@ const siderbar = {
           text: '泰国行',
           link: '/life/thailand',
         },
+        {
+          text: '自用tv导航',
+          link: '/life/tvsite',
+        },
       ],
     },
   ],
