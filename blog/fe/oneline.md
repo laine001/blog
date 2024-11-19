@@ -46,6 +46,9 @@ localhost: 本地服务器。不经网卡传输，不受网络防火墙和网卡
 
 - 如果全局目录还是没找到，那么就从 path 环境变量中查找有没有其他同名的可执行程序
 
+## 通过设置元素的边框属性`border-inline/block-start/end-width`可以实现类按钮组的样式(边框问题)
+https://ant.design/components/radio-cn
+
 ## npm link
 
 <git-talk />
