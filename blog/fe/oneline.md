@@ -1,6 +1,6 @@
 # 一句话记录
 
-<img class="post-img" src="https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/7p/wallhaven-7prmdv.jpg?" />
+<img class="post-img" src="/images/z-1.jpg" />
 
 ## 有时候修改由 git 提交过的文件名称的大小写无效
 
