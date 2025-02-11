@@ -47,21 +47,21 @@ export default defineConfig({
     // logo: 'https://laine001.gitee.io/ikun-ui/layer5.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '首页', link: '/' },
+      { text: '🍻首页', link: '/' },
       {
-        text: '博客',
+        text: '👷博客',
         // link: '/fe/oneline',
         items: [
           {
-            text: '日常blog',
+            text: '🎨日常blog',
             link: '/fe/nuxt2',
           },
           {
-            text: '问题记录',
+            text: '📝问题记录',
             link: '/fe/oneline',
           },
           {
-            text: '学习记录',
+            text: '🚀学习记录',
             link: '/fe/markdown-examples',
           },
         ],
@@ -80,8 +80,8 @@ export default defineConfig({
       //   ],
       // },
       // { text: '日常blog', link: '/daily/nuxt2' },
-      { text: '生活记录', link: '/life/medicine' },
-      { text: '关于', link: '/about/me' }
+      { text: '✨生活记录', link: '/life/medicine' },
+      { text: '🚧关于', link: '/about/me' }
     ],
 
     sidebar: siderbar,
