@@ -49,6 +49,10 @@ const siderbar = {
       text: '学习记录',
       items: [
         {
+          text: 'ITPMP',
+          link: '/life/itpmp'
+        },
+        {
           text: 'markdown语法',
           link: '/fe/markdown-examples'
         },
