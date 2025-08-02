@@ -66,19 +66,23 @@ export default defineConfig({
           },
         ],
       },
-      // {
-      //   text: '服务端',
-      //   items: [
-      //     {
-      //       text: 'Java',
-      //       link: '/service/java',
-      //     },
-      //     {
-      //       text: 'Docker',
-      //       link: '/service/java',
-      //     },
-      //   ],
-      // },
+      {
+        text: '🔥AI',
+        items: [
+          {
+            text: '1',
+            link: '/ai/1',
+          },
+          {
+            text: '2',
+            link: '/ai/2',
+          },
+          {
+            text: '4',
+            link: '/ai/4',
+          },
+        ],
+      },
       // { text: '日常blog', link: '/daily/nuxt2' },
       { text: '✨生活记录', link: '/life/medicine' },
       { text: '🚧关于', link: '/about/me' }

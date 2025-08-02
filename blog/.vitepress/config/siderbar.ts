@@ -108,6 +108,25 @@ const siderbar = {
         },
       ]
     }
+  ],
+  '/ai/': [
+    {
+      text: 'AI',
+      items: [
+        {
+          text: '1',
+          link: '/ai/1'
+        },
+        {
+          text: '2',
+          link: '/ai/2'
+        },
+        {
+          text: '4',
+          link: '/ai/4'
+        },
+      ]
+    }
   ]
 }
 
