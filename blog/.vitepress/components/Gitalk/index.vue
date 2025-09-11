@@ -39,13 +39,13 @@ onMounted(() => {
 .dark .gt-header-textarea,
 .dark .gt-header-preview,
 .dark .gt-comment-content {
-  background: #333;
-  background-color: #333 !important;
+  background: #161618;
+  background-color: #161618 !important;
   color: var(--vp-c-text-1) !important;
 }
 
 .dark .gt-header-textarea:hover {
-  background: #111;
+  background: #161618;
   border-color: var(--vp-c-brand-1);
 }
 
@@ -56,7 +56,8 @@ onMounted(() => {
 .gt-comment-content,
 .gt-comment-avatar img,
 .gt-header-textarea {
-  border-radius: 8px !important;
+  border-radius: var(--cov-small-radius) !important;
+  /* border-radius: 8px !important; */
 }
 
 .gt-container .gt-btn-preview,

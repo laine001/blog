@@ -1,6 +1,6 @@
 # 一句话记录
 
-<img class="post-img" src="/images/z-1.jpg" />
+<img src="/images/z-1.jpg" class="zoom post-cover" />
 
 ## 有时候修改由 git 提交过的文件名称的大小写无效
 

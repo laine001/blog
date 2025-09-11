@@ -6,6 +6,26 @@
   display: none;
 }
 
+img {
+  border-radius: var(--cov-small-radius);
+}
+
+.post-cover:not(.medium-zoom-image--opened) {
+  margin-top: 20px;
+  // border-radius: var(--cov-default-radius);
+}
+
+.medium-zoom-overlay {
+  z-index: 9999 !important;
+}
+
+.medium-zoom-image--opened {
+  z-index: 9999 !important;
+  object-fit: contain !important;
+  border-radius: 2px;
+}
+
+// 暂未启用
 /* 护眼模式样式 */
 .eye-care-mode {
   --vp-c-bg: #f5f5dc !important;
