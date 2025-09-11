@@ -1,23 +1,20 @@
 // https://vitepress.dev/guide/custom-theme
-
 import { inBrowser } from 'vitepress'
 import busuanzi from 'busuanzi.pure.js'
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
-import Comment from '../components/gitalk.vue'
+import Comment from '../components/Gitalk/index.vue'
+import HomeUnderline from '../components/HomeUnderline/index.vue'
+import NavSiteList from '../components/NavSiteList/index.vue'
+import Confetti from '../components/Confetti/index.vue'
 import { Image, ImagePreviewGroup } from 'ant-design-vue'
-import './style.css'
-import './custom.css'
+import './styles/vp-var.css'
+import './styles/my-style.scss'
+import './styles/override-vp.scss'
 
-// /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,
   Layout,
-  // Layout: () => {
-  //   return h(DefaultTheme.Layout, null, {
-  //     // https://vitepress.dev/guide/extending-default-theme#layout-slots
-  //   })
-  // },
   enhanceApp({ app, router }) {
     if (inBrowser) {
       router.onAfterRouteChanged = () => {
@@ -27,5 +24,8 @@ export default {
     app.component('git-talk', Comment)
     app.component('a-image', Image)
     app.component('a-image-preview-group', ImagePreviewGroup)
-  },
+    app.component('HomeUnderline', HomeUnderline)
+    app.component('Confetti', Confetti)
+    app.component('NavSiteList', NavSiteList)
+  }
 }

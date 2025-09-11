@@ -31,9 +31,11 @@ onMounted(() => {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
 }
+
 .gt-container .gt-header-textarea:hover {
   border-color: var(--vp-c-brand-1);
 }
+
 .dark .gt-header-textarea,
 .dark .gt-header-preview,
 .dark .gt-comment-content {
@@ -41,13 +43,16 @@ onMounted(() => {
   background-color: #333 !important;
   color: var(--vp-c-text-1) !important;
 }
+
 .dark .gt-header-textarea:hover {
   background: #111;
   border-color: var(--vp-c-brand-1);
 }
+
 .dark .gt-container .gt-comment-content:hover {
   box-shadow: none;
 }
+
 .gt-comment-content,
 .gt-comment-avatar img,
 .gt-header-textarea {
@@ -61,14 +66,17 @@ onMounted(() => {
   border-color: var(--vp-c-brand-1);
   color: #fff;
 }
+
 .gt-container .gt-btn-preview:hover,
 .gt-container .gt-btn-login:hover {
   background-color: var(--vp-c-brand-3);
   border-color: var(--vp-c-brand-3);
 }
+
 .gt-container .gt-svg svg {
   fill: var(--vp-c-brand-3);
 }
+
 .gt-ico-text,
 .gt-container .gt-comment-username {
   color: var(--vp-c-brand-3);

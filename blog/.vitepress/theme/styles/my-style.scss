@@ -1,0 +1,91 @@
+// 卜算子
+.pv-uv-count {
+  font-size: 10px;
+  color: #888;
+  text-align: center;
+  display: none;
+}
+
+/* 护眼模式样式 */
+.eye-care-mode {
+  --vp-c-bg: #f5f5dc !important;
+  --vp-c-bg-alt: #f0f0d0 !important;
+  --vp-c-bg-soft: #ebebd3 !important;
+  --vp-c-bg-mute: #e6e6cc !important;
+  --vp-c-text-1: #2c3e2d !important;
+  --vp-c-text-2: #3a4f3b !important;
+  --vp-c-text-3: #4a5f4b !important;
+  --vp-c-divider: #d4d4aa !important;
+  --vp-c-divider-light: #e0e0bb !important;
+  --vp-nav-bg-color: rgba(245, 245, 220, 0.9) !important;
+  --vp-sidebar-bg-color: #f5f5dc !important;
+
+  /* 代码块护眼模式 */
+  --vp-code-bg: #ede8d3 !important;
+  --vp-code-block-bg: #ede8d3 !important;
+  --vp-c-code-bg: #ede8d3 !important;
+
+  /* 链接颜色调整 */
+  --vp-c-brand-1: #5a7c5a !important;
+  --vp-c-brand-2: #6b8e6b !important;
+  --vp-c-brand-3: #4a6b4a !important;
+
+  /* 表格护眼模式 */
+  --vp-c-bg-elv: #f0f0d0 !important;
+  --vp-c-bg-elv-up: #ebebd3 !important;
+  --vp-c-bg-elv-down: #e6e6cc !important;
+
+  /* 搜索框护眼模式 */
+  .DocSearch-Button {
+    background: #ede8d3 !important;
+    color: #2c3e2d !important;
+  }
+
+  /* 导航栏护眼模式 */
+  .VPNavBar {
+    background-color: rgba(245, 245, 220, 0.9) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  /* 侧边栏护眼模式 */
+  .VPSidebar {
+    background-color: #f5f5dc !important;
+  }
+
+  /* 内容区域护眼模式 */
+  .VPContent {
+    background-color: #f5f5dc !important;
+  }
+
+  /* 自定义容器护眼模式 */
+  .custom-block {
+    background-color: #ede8d3 !important;
+    border-color: #d4d4aa !important;
+  }
+
+  /* AI box 护眼模式 */
+  .ai-box {
+    background: linear-gradient(135deg,
+        rgba(143, 188, 143, 0.1) 0%,
+        rgba(107, 142, 107, 0.08) 50%,
+        rgba(90, 124, 90, 0.1) 100%) !important;
+    border-color: rgba(143, 188, 143, 0.3) !important;
+  }
+
+  .post-info-card {
+    background-color: #f5f5dc !important;
+  }
+}
+
+/* 护眼模式下的滚动条 */
+.eye-care-mode ::-webkit-scrollbar-thumb {
+  background: #c4c4a4 !important;
+}
+
+.eye-care-mode ::-webkit-scrollbar-thumb:hover {
+  background: #b4b494 !important;
+}
+
+.eye-care-mode ::-webkit-scrollbar-track {
+  background: #ede8d3 !important;
+}

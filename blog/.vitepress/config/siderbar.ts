@@ -1,9 +1,19 @@
-const siderbar = {
+import { DefaultTheme } from 'vitepress'
+
+const sidebar: DefaultTheme.Sidebar = {
   '/fe/': [
     {
       text: '日常Blog',
       // collapsed: true,
       items: [
+        {
+          text: '一句话记录',
+          link: '/fe/oneline',
+        },
+        {
+          text: 'package.json详解',
+          link: '/fe/pkg-json',
+        },
         {
           text: 'nuxt2小结',
           link: '/fe/nuxt2',
@@ -33,44 +43,22 @@ const siderbar = {
           link: '/fe/onion-model',
         },
         {
+          text: '一些面试题',
+          link: '/fe/interview',
+        },
+        {
           text: 'css相关',
           link: '/fe/css',
         },
       ],
     },
-    {
-      text: '问题记录',
-      items: [
-        { text: '一句话记录', link: '/fe/oneline' },
-        { text: '面试题', link: '/fe/interview' },
-      ],
-    },
-    {
-      text: '学习记录',
-      items: [
-        {
-          text: 'markdown语法',
-          link: '/fe/markdown-examples'
-        },
-        // {
-        //   text: 'Vue源码学习',
-        //   link: '/fe/vue2-source-code',
-        // },
-        // {
-        //   text: 'React源码学习',
-        // },
-        {
-          text: 'Flutter学习记录',
-        },
-      ],
-    },
   ],
-  '/service': [
-    {
-      text: 'Java学习笔记',
-      link: '/service/java',
-    },
-  ],
+  // '/service': [
+  //   {
+  //     text: 'Java学习笔记',
+  //     link: '/service/java',
+  //   },
+  // ],
   '/life/': [
     {
       text: '生活记录',
@@ -88,8 +76,8 @@ const siderbar = {
           link: '/life/thailand',
         },
         {
-          text: '自用tv导航',
-          link: '/life/tvsite',
+          text: '一些不错的网站',
+          link: '/life/some-site',
         },
       ],
     },
@@ -130,4 +118,4 @@ const siderbar = {
   ]
 }
 
-export default siderbar
+export default sidebar
