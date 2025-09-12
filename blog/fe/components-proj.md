@@ -43,11 +43,3 @@
 [文档 🏀](https://github.com/LAINE001/ikun-ui)
 
 <git-talk />
-
-<!-- <style>
-.my-button {
-  padding: 2px 14px;
-  background: pink;
-  border-radius: 8px;
-}
-</style> -->

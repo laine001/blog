@@ -1,10 +1,12 @@
 # 洋葱模型
 
-<img class="post-img" src="https://www4.bing.com//th?id=OHR.TunisiaAmphitheatre_ZH-CN4431856872_UHD.jpg" />
+<img class="post-cover" src="https://www4.bing.com//th?id=OHR.TunisiaAmphitheatre_ZH-CN4431856872_UHD.jpg" />
 
 ## 一个请求经过中间件最后生成响应
 
-![洋葱模型](https://camo.githubusercontent.com/d80cf3b511ef4898bcde9a464de491fa15a50d06/68747470733a2f2f7261772e6769746875622e636f6d2f66656e676d6b322f6b6f612d67756964652f6d61737465722f6f6e696f6e2e706e67)
+<img class="post-cover" src="/assets/onion.png" />
+
+一个请求从外到里一层一层的经过中间件，响应时从里到外一层一层的经过中间件。
 
 ## 基于 koa2 的 demo
 

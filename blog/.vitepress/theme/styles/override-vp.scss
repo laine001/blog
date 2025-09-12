@@ -27,8 +27,9 @@
 // 顶部搜素框
 .DocSearch-Button,
 .custom-block,
-.pager .VPLink {
-  border-radius: var(--cov-default-radius);
+.pager .VPLink,
+.vp-adaptive-theme {
+  border-radius: var(--cov-default-radius) !important;
 }
 
 .DocSearch {

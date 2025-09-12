@@ -113,7 +113,7 @@ nuxtServerInit
 - 可访问到服务端的 context 对象
 - 只存在于 vuex 中
 
-```!
+```
   nuxt会在每一次请求服务器页面时执行，即：首次进入页面或刷新页面
   且只存在于vuex中的action对象中
 ```

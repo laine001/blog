@@ -47,6 +47,14 @@ const sidebar: DefaultTheme.Sidebar = {
           link: '/fe/interview',
         },
         {
+          text: 'webpack工程化',
+          link: '/fe/webpack',
+        },
+        {
+          text: 'nodejs',
+          link: '/fe/nodejs-1',
+        },
+        {
           text: 'css相关',
           link: '/fe/css',
         },
@@ -63,10 +71,6 @@ const sidebar: DefaultTheme.Sidebar = {
     {
       text: '生活记录',
       items: [
-        {
-          text: 'ITPMP',
-          link: '/life/itpmp'
-        },
         {
           text: '常见药物相关',
           link: '/life/medicine',
