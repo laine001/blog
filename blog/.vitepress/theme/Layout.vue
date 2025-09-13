@@ -13,3 +13,12 @@ import DefaultTheme from 'vitepress/theme'
     <template #home-footer>123</template>
   </DefaultTheme.Layout>
 </template>
+<style>
+.VPSwitchAppearance {
+  width: 22px !important;
+}
+
+.VPSwitchAppearance .check {
+  transform: none !important;
+}
+</style>

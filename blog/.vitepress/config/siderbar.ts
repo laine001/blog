@@ -72,16 +72,16 @@ const sidebar: DefaultTheme.Sidebar = {
       text: '生活记录',
       items: [
         {
+          text: '一些不错的网站',
+          link: '/life/some-site',
+        },
+        {
           text: '常见药物相关',
           link: '/life/medicine',
         },
         {
           text: '泰国行',
           link: '/life/thailand',
-        },
-        {
-          text: '一些不错的网站',
-          link: '/life/some-site',
         },
       ],
     },

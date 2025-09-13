@@ -11,22 +11,23 @@ export default [
   },
   {
     text: 'AI',
-    items: [
-      {
-        text: '1',
-        link: '/ai/1',
-      },
-      {
-        text: '2',
-        link: '/ai/2',
-      },
-      {
-        text: '4',
-        link: '/ai/4',
-      },
-    ],
+    link: '/ai/1'
+    // items: [
+    //   {
+    //     text: '1',
+    //     link: '/ai/1',
+    //   },
+    //   {
+    //     text: '2',
+    //     link: '/ai/2',
+    //   },
+    //   {
+    //     text: '4',
+    //     link: '/ai/4',
+    //   },
+    // ],
   },
   // { text: '日常blog', link: '/daily/nuxt2' },
-  { text: '一些记录', link: '/life/medicine' },
+  { text: '随笔', link: '/life/some-site' },
   { text: '关于', link: '/about/me' }
 ]
