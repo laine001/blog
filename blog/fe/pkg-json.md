@@ -1,5 +1,7 @@
 # package.json文件中各字段
 
+[官方文档(英文)](https://docs.npmjs.com/cli/v10/configuring-npm/package-json)
+
 ## `type`
 
 默认的模板系统：
@@ -110,7 +112,7 @@ console.log('hello world ~')
 
 是否私有，为true时将不允许发布到npm。
 
-[官方文档(英文)](https://docs.npmjs.com/cli/v10/configuring-npm/package-json)
+
 
 ## npm 常见命令
 

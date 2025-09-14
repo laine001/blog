@@ -83,6 +83,10 @@ const sidebar: DefaultTheme.Sidebar = {
           text: '泰国行',
           link: '/life/thailand',
         },
+        // {
+        //   text: '一些心情记录',
+        //   link: '/life/essay',
+        // },
       ],
     },
   ],
