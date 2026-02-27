@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.BXwhd-1y.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"life/essay.md","filePath":"life/essay.md","lastUpdated":1772158004000}'),s={name:"life/essay.md"};function r(o,c,n,i,d,p){return a(),t("div")}const _=e(s,[["render",r]]);export{l as __pageData,_ as default};
