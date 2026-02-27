@@ -52,3 +52,6 @@ https://ant.design/components/radio-cn
 ## npm link
 
 <git-talk />
+
+## 浏览器扩展开发
+在浏览器的扩展程序时，如果要开发自定义的调试面板，使用`chrome.devtools.panels.create`方法创建，参数分别为名称、icon、文件、回调。其中名称需为**英文**。[官方文档](https://developer.chrome.com/docs/extensions/reference/api/devtools/panels)
