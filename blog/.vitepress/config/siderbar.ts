@@ -43,7 +43,7 @@ const sidebar: DefaultTheme.Sidebar = {
           link: '/fe/onion-model',
         },
         {
-          text: '一些面试题',
+          text: '前端知识点',
           link: '/fe/interview',
         },
         {
