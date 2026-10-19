@@ -1,5 +1,6 @@
 # 前端知识点总结
 
+
 <img class="post-img" src="https://www4.bing.com//th?id=OHR.PontdArcole_ZH-CN5348049357_1920x1080.jpg&rf=LaDigue_1920x1080.jpg" />
 
 ## js/浏览器
@@ -11,16 +12,19 @@
 #### JavaScript V8 中自动垃圾回收机制的原理为：
 
 - v8 垃圾回收机制使用的是标记清除法
-  > 1.  找出那些不再使用的变量，然后释放其占用的内存。
-  > 2.  垃圾收集器会按照固定的时间间隔(或预定的收集时间) 周期性 地执行此操作。
+
+  1.找出那些不再使用的变量，然后释放其占用的内存。
+
+  2.垃圾收集器会按照固定的时间间隔(或预定的收集时间) 周期性 地执行此操作。
+
 - 引用计数法
 
-> 含义为跟踪记录每个值被引用的次数，当声明一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数为 1，如果同一个值又被赋给另一个变量，该值的引用次数加 1，如果包含这个值引用的变量又取得了另外一个值，则这个值得引用次数减 1.当引用次数为 0 时回收其占用得内存空间。
+含义为跟踪记录每个值被引用的次数，当声明一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数为 1，如果同一个值又被赋给另一个变量，该值的引用次数加 1，如果包含这个值引用的变量又取得了另外一个值，则这个值得引用次数减 1.当引用次数为 0 时回收其占用得内存空间。
 
 ### 2. js 的事件循环机制
 
-> JavaScript 有一个 main thread 主线程和 call-stack 调用栈（执行栈），所有的任务都会放到调用栈中等待主线程执行。
-> 任务进入执行栈之后会判断一下是否是同步任务，若是同步任务就会进入主线程执行；异步任务就会到事件表里面注册回调函数到事件队列。
+JavaScript 有一个 main thread 主线程和 call-stack 调用栈（执行栈），所有的任务都会放到调用栈中等待主线程执行。
+任务进入执行栈之后会判断一下是否是同步任务，若是同步任务就会进入主线程执行；异步任务就会到事件表里面注册回调函数到事件队列。
 
 1. 同步和异步任务分别进入不同的执行”场所”，同步的进入主线程，异步的进入 Event Table 并注册函数
 2. 当指定的事情完成时，Event Table 会将这个函数移入 Event Queue
@@ -30,11 +34,29 @@
 - 宏任务：整体代码 script、setTimeout、setInterval、setImmediate, I/O, UI rendering。
 - 微任务：原生 Promise 中 then 方法、process.nextTick、MutationObserver, Object.observe
 
+> 执行顺序：同步代码 → 全部微任务 → UI渲染 → 取一个宏任务，循环往复。
+
+```javascript
+console.log('1')
+setTimeout(() => console.log('2'), 0)
+Promise.resolve().then(() => console.log('3'))
+queueMicrotask(() => console.log('4'))
+(async () => {
+  console.log('5')
+  await null
+  console.log('6')
+})()
+console.log('7')
+
+// 157346;2
+
+```
+
 [事件循环机制](https://juejin.cn/post/6844904079353708557)
 
 ### 3. 什么是闭包，为什么有闭包概念，存在什么问题，适用什么应用场景
 
-> 闭包就是能够读取其他函数内部变量的函数。使用不当造成内存泄露
+闭包就是能够读取其他函数内部变量的函数。使用不当造成内存泄露
 
 1. 函数嵌套函数
 2. 函数内部可以引用函数外部的参数和变量
@@ -42,7 +64,7 @@
 
 ### 4. 讲一下原型链
 
-> 每个对象都存在一个**proto**属性指向其构造函数的 prototype 属性值
+每个对象都存在一个**proto**属性指向其构造函数的 prototype 属性值
 
 ```
 var a = {}
@@ -54,17 +76,19 @@ a.__proto__ === Object.prototype // true
 > reflow（回流）：当浏览器发现某个部分发生了变化影响了布局，这个时候就需要倒回去重新渲染，这个过程就叫做 reflow；
 > repaint（重绘）：当改变某个元素的背景色、字体颜色、边框颜色等不影响布局的属性时，屏幕的一部分需要重画，但是元素的几何尺寸和位置都没有发现变化；
 
-1. 浏览器将获取的 HTML 文档解析成 DOM 树；
-2. 处理 CSS 标记，构成层叠样式表模型（CSSOM）；
-3. 将 DOM 和 CSSOM 合并为渲染树（rendering tree）；
-4. 渲染树的每个元素的内容都是计算过的，称之为 布局 layout；
-5. 将渲染树上的各个节点绘制到屏幕上，称之为 绘制 painting；
-   [浏览器渲染过程简析](https://zhuanlan.zhihu.com/p/212220203)
+1. 浏览器将获取的 HTML 文档解析成 DOM 树
+2. 处理 CSS 标记，构成层叠样式表模型（CSSOM）
+3. 将 DOM 和 CSSOM 合并为渲染树（rendering tree）
+4. 渲染树的每个元素的内容都是计算过的，称之为 布局 layout
+5. 将渲染树上的各个节点绘制到屏幕上，称之为 绘制 painting
+
+[浏览器渲染过程简析](https://zhuanlan.zhihu.com/p/212220203)
 
 ### 6. 手动实现浅拷贝、深拷贝
 
-> 浅拷贝：重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，但对象的引用类型因为还是共享同一块内存，会相互影响。
-> 深拷贝：从堆内存中开辟一个新的区域存放新对象，对对象中的子对象进行递归拷贝，前后的值互不影响。
+浅拷贝：重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，但对象的引用类型因为还是共享同一块内存，会相互影响。
+
+深拷贝：从堆内存中开辟一个新的区域存放新对象，对对象中的子对象进行递归拷贝，前后的值互不影响。
 
 ```javascript
 // 浅拷贝
@@ -107,8 +131,7 @@ function deepClone2(target, hash = new WeakMap()) {
 ### 7. 手动实现防抖节流函数
 
 ```javascript
-// 防抖
-// keyup事件、resize scroll
+// 防抖：多次触发合并为最后一次执行，resize、input搜索
 function debounce(fn, delay, scope) {
   let timer = null
   // 返回函数对debounce作用域形成闭包
@@ -123,7 +146,9 @@ function debounce(fn, delay, scope) {
     }, delay)
   }
 }
-// 节流
+// 节流：每隔固定时间，最多执行一次
+// 滚动过程中，每隔 200ms 判断一次元素是否进入视口（懒加载、吸顶）
+// 防止短时间疯狂点击按钮
 function throttle(fn, threshold, scope) {
   let timer
   let prev = Date.now()
@@ -161,7 +186,7 @@ function throttle2(fn, threshold, scope) {
 
 ### 9. 为什么会有跨域、怎么解决
 
-> 浏览器的同源策略
+浏览器的同源策略
 
 - 服务端设置允许跨域
 - nginx 配置代理
@@ -169,22 +194,23 @@ function throttle2(fn, threshold, scope) {
 
 ### 10. 图片压缩原理
 
-> canvas drawImage
+canvas drawImage
 
 ### 11. 函数参数为外部的一个对象，函数内部删除对象的某个属性，元数据会不会改变
 
-> 会，引用类型
+会，引用类型
 
 ```javascript
 const data = {
   a: 1,
 }
+data.a = 2
 function func(data) {
-  data.a = 2 // delete data.a
-  console.log(data, 'in') // { a: 2 }
+  data.a = 3
+  console.log(data, 'in') // { a: 3 }
 }
 func(data)
-console.log(data, 'out') // { a: 2 }
+console.log(data, 'out') // { a: 3 }
 ```
 
 ### 12. 继承（手写 class 继承）
@@ -212,11 +238,17 @@ xiaogang.sayHello()
 
 ### 13. bind、apply、call 的区别与作用
 
-- apply 接受两个参数，第一个参数是 this 的指向，第二个参数是函数接受的参数，以数组的形式传入，且当第一个参数为 null、undefined 的时候，默认指向 window(在浏览器中)，使用 apply 方法改变 this 指向后原函数会立即执行，且此方法只是临时改变 thi 指向一次。
-- call 方法的第一个参数也是 this 的指向，后面传入的是一个参数列表（注意和 apply 传参的区别）。当一个参数为 null 或 undefined 的时候，表示指向 window（在浏览器中），和 apply 一样，call 也只是临时改变一次 this 指向，并立即执行。
-- bind 方法和 call 很相似，第一参数也是 this 的指向，后面传入的也是一个参数列表(但是这个参数列表可以分多次传入，call 则必须一次性传入所有参数)，但是它改变 this 指向后不会立即执行，而是返回一个永久改变 this 指向的函数。
+- `apply(thisArg, [arg1,arg2])`：改变 this 指向，**立即执行函数**，参数传入数组。
+- `call(thisArg, arg1, arg2)`：改变 this 指向，**立即执行函数**，参数逐个传入。
+- `bind(thisArg, arg1, arg2)`：改变 this 指向，**返回新函数，不会立即执行**，支持柯里化分次传参。
+
+当第一个参数为 null /undefined，浏览器环境 this 默认指向 window。
 
 ### 14. Promise 简述与原理
+
+Promise 是异步编程方案，有三种状态：pending、fulfilled、rejected，状态一旦改变不可回退。
+`.then()`接收成功回调，`.catch()`捕获异常，`.finally()`无论成功失败都会执行。
+静态方法：`Promise.all`、`Promise.race`、`Promise.allSettled`、`Promise.any`。
 
 ### 15. 手动实现 map 函数
 
@@ -235,11 +267,17 @@ const arr2 = arr.map2((item) => item * 2)
 console.log(arr2) // [2, 4, 6]
 ```
 
-## vue2
+### 16.  webworker是什么，什么场景使用
+
+JavaScript 在浏览器里是单线程的。主线程同时负责：执行 JS、计算样式、布局、绘制、处理用户输入。如果一段 JS 计算跑了 2 秒，这 2 秒内页面完全卡死——点击没反应、动画停住、滚动卡顿。
+
+Web Worker 让你开一个独立的后台线程跑 JS，主线程继续响应 UI。两个线程通过 postMessage 通信，不共享内存
+
+## vue
 
 ### 1. Vue 双向绑定
 
-> Object.defineProperty
+`Object.defineProperty`
 
 ```html
 <!DOCTYPE html>
@@ -329,54 +367,38 @@ history.reaplceState  history.pushState
 ```
 
 ### 3. nextTick 原理，除了 Mutation Observer 还有什么实现方式
-
-### 4. keepalive 如何实现刷新
+nextTick 在 DOM 更新完成之后执行回调。
 
 ### 5. computed 实现原理
-
+computed 是惰性求值，内部有 watcher，依赖发生改变才重新计算；有缓存，多次访问不会重复执行函数。
 ### 6. created 和 mounted 的区别
 
+- created：实例创建完成，data、methods 已经初始化，DOM 还未生成，$el 不存在。
+- mounted：组件 DOM 已经挂载完成，可以操作 DOM。
+  
 ## react
 
 ### 1. react 的 setState 是同步异步？为什么
 
-### 2. react 里性能优化在哪个生命周期函数？
+并非真正异步。**合成事件、生命周期内会批量合并 state 更新，表现为异步；原生事件、setTimeout 中同步执行**。
+React18 自动批处理，统一做 state 合并。
 
-> shouldComponentUpdate 这个方法用来判断是否需要调用 render 方法重新描绘 dom。因为 dom 的描绘非常消耗性能，如果我们能在 shouldComponentUpdate 方法中能够写出更优化的 dom diff 算法，可以极大的提高性能。
-
-### 3. react 生命周期，各生命周期作用
-
-1. componentWillMount() – 在渲染之前执行，在客户端和服务器端都会执行。
-2. componentDidMount() – 仅在第一次渲染后在客户端执行。
-3. componentWillReceiveProps() – 当从父类接收到 props 并且在调用另一个渲染器之前调用。
-4. shouldComponentUpdate() – 根据特定条件返回 true 或 false。如果你希望更新组件，请返回 true 否则返回 false。默认情况下，它返回 false。
-5. componentWillUpdate() – 在 DOM 中进行渲染之前调用。
-6. componentDidUpdate() – 在渲染发生后立即调用。
-7. componentWillUnmount() – 从 DOM 卸载组件后调用。用于清理内存空间。
-   > 16.8+
-8. 挂载阶段： constructor(props): 实例化。static getDerivedStateFromProps 从 props 中获取 state。
-   render 渲染。
-   componentDidMount: 完成挂载。
-9. 更新阶段： static getDerivedStateFromProps 从 props 中获取 state。
-   shouldComponentUpdate 判断是否需要重绘。
-   render 渲染。
-   getSnapshotBeforeUpdate 获取快照。
-   componentDidUpdate 渲染完成后回调。
-10. 卸载阶段： componentWillUnmount 即将卸载。
-11. 错误处理： static getDerivedStateFromError 从错误中获取 state。
-    componentDidCatch 捕获错误并进行处理。
-
-### 4. 什么是高阶组件（hoc）
+### 2. 什么是高阶组件（hoc）
 
 > 高阶组件[higher order component]是一个以组件为参数并返回一个新组件的函数。HOC 运行你重用代码、逻辑和引导抽象。最常见的可能是 Redux 的 connect 函数。除了简单分享工具库和简单的组合，HOC 最好的方式是共享 React 组件之间的行为。如果你发现你在不同的地方写了大量代码来做同一件事时，就应该考虑将代码重构为可重用的 HOC。
 
-### 什么是 react fiber
+### 3. 什么是 react fiber
+React16 引入 Fiber 架构，把大的渲染任务拆分成多个小任务，可中断、可恢复，解决同步渲染长时间阻塞主线程问题。
 
-### hooks 原理
+### 4. hooks 原理
+Hooks 依靠链表保存状态，函数组件每次执行按顺序读取 hooks；**hooks 不能写在条件、循环内部**。
 
 ### 5. 简述 redux
-
+三大原则：单一数据源、state 只读、使用纯函数 reducer 修改 state。
+核心概念：Action、Reducer、Store、View。
+流程：View dispatch (action) → reducer 计算新 state → store 更新 → view 获取最新 state 渲染。
 ### 6. diff 算法实现
+React Diff 只比较同层节点；key 用来做节点复用；类型不同直接销毁重建；列表 diff 通过 key 做移动、删除、新增优化。
 
 ### 7. fiber 原理与实现
 
@@ -407,7 +429,11 @@ function addTodo(text) {
 // 新增 state,对状态的管理更加明确，通过 redux，流程更加规范了，减少手动编码量，提高了编码效率，同时缺点时当数据更新时有时候组件不需要，但是也要重新绘制，有些影响效率。一般情况下，我们在构建多交互，多数据流的复杂项目应用时才会使用它们
 ```
 
-### 6. react 类组件和函数组件区别与使用场景
+### vue和react的根本区别
+
+- vue：声明式、模板语法、响应式（劫持数据，读取时收集依赖，修改时通知对应依赖更新。）
+- react：jsx、不可变状态 + 重新执行组件函数
+
 
 ## webpack
 
@@ -422,17 +448,44 @@ function addTodo(text) {
 
 ### 3. loader 和 plugins 的区别和基本原理
 
+- loader：文件转换器，处理模块，作用在文件级别，串行执行。
+- plugin：插件，基于 tapable 钩子，监听 webpack 构建生命周期，做更复杂的功能。
+
 ## 网络
 
 ### tcp
 
-第一次握手：客户端发送 syn 包(syn=j)到服务器，并进入 SYN_SEND 状态，等待服务器确认；
-第二次握手：服务器收到 syn 包，必须确认客户的 SYN（ack=j+1），同时自己也发送一个 SYN 包（syn=k），即 SYN+ACK 包，此时服务器进入 SYN_RECV 状态；
-第三次握手：客户端收到服务器的 SYN ＋ ACK 包，向服务器发送确认包 ACK(ack=k+1)，此包发送完毕，客户端和服务器进入 ESTABLISHED 状态，完成三次握手。
+### 三次握手（建立连接）
+
+1. 客户端发送 SYN 报文，请求建立连接
+2. 服务端收到，回复 SYN+ACK：同意连接，并确认收到客户端请求
+3. 客户端收到应答，回复 ACK，连接建立，开始传输数据
+
+**目的：确认双方收发能力正常，同步序列号**
 
 > 握手过程中传送的包里不包含数据，三次握手完毕后，客户端与服务器才正式开始传送数据。理想状态下，TCP 连接一旦建立，在通信双方中的任何一方主动关闭连接之前，TCP 连接都将被一直保持下去。断开连接时服务器和客户端均可以主动发起断开 TCP 连接的请求，断开过程需要经过“四次握手”（过程就不细写了，就是服务器和客户端交互，最终确定断开）
 
+### 四次挥手（断开连接）
+
+TCP 是全双工通信，两个方向通道需要分别关闭：
+
+1. 客户端发送 FIN：我方不再发送数据
+2. 服务端返回 ACK：收到关闭请求，继续传输剩余数据
+3. 服务端数据传输完毕，发送 FIN：服务端发送通道关闭
+4. 客户端返回 ACK，等待一段时间后，连接彻底释放
+
+### TCP和UDP
+
+- **TCP**：面向连接、可靠传输；有握手挥手、ACK 确认、超时重传、拥塞控制；数据有序；开销大。适用：网页、文件传输、HTTP。
+- **UDP**：无连接、不可靠；无握手，直接发包；无确认、不重传；开销小速度快，存在丢包乱序。适用：直播、视频通话、DNS 查询。
+
 ### http、https、http2
+
+- **HTTP1.1**：文本明文协议；支持 keep‑alive 长连接；同域名最多 6 个并行连接，请求串行；每次请求重复携带完整 header，头部冗余。
+- **HTTP2**：二进制分帧传输，不再是文本；**多路复用**，单条 TCP 连接并行处理多个请求；HPACK 头部压缩；支持服务端推送，依然是明文传输。
+- **HTTPS = HTTP + TLS**：在 TCP 和 HTTP 中间增加 TLS 加密；传输数据加密，防窃听、防篡改、服务器身份认证；HTTPS 底层可以是 HTTP1.1 或 HTTP2。
+
+> 核心区别：HTTP1.1 串行明文；HTTP2 单连接多路复用，明文；HTTPS 带 TLS 加密，保障传输安全。
 
 ### 在地址栏里输入一个地址回车会发生哪些事情
 
@@ -510,22 +563,30 @@ console.log(bubbleSort([2,4,6,1,7,8,4,9,99,6]))
 
 ### 二叉树
 
-### diff 算法
-
 ## 其他
 
 ### 什么是进程、什么是线程
 
+**进程是操作系统资源分配的最小单位；线程是 CPU 调度的最小单位。一个进程可以包含多个线程，线程共享所属进程资源。**
+
 ### 设计原则与设计模式
 
 1. 工厂模式
-   > 故名思意，我们从字面上的意思就可以看到，可以想象一座工厂源源不断产出一样的产品，流水线作业。没错，工厂模式就是这样。
+
+故名思意，我们从字面上的意思就可以看到，可以想象一座工厂源源不断产出一样的产品，流水线作业。没错，工厂模式就是这样。
+
+
 2. 单例模式
-   > 单例模式就是保证一个类仅有一个实例，并提供一个访问它的全局访问点。其实这有一点像我们 vuex 当中的实现，也是一个全局的状态管理，并且提供一个接口访问。
+
+单例模式就是保证一个类仅有一个实例，并提供一个访问它的全局访问点。其实这有一点像我们 vuex 当中的实现，也是一个全局的状态管理，并且提供一个接口访问。
+
 3. 代理模式
-   > 我们在事件代理的时候其实就是使用了代理模式，通过把监听事件全部交由父节点进行监听，这样你添加节点或者删除节点的时候就不用去改变监听的代码。
+
+我们在事件代理的时候其实就是使用了代理模式，通过把监听事件全部交由父节点进行监听，这样你添加节点或者删除节点的时候就不用去改变监听的代码。
+
 4. 发布订阅模式
-   > 这种模式在生活中随处可见，比如你订阅了一个网课，开始前 10 分钟就会提醒你去听课。这里其实就是发布-订阅的模式，你订阅了它的开课信息，但是你不会接收到另一门的开课信息，因为你没有订阅。
+这种模式在生活中随处可见，比如你订阅了一个网课，开始前 10 分钟就会提醒你去听课。这里其实就是发布-订阅的模式，你订阅了它的开课信息，但是你不会接收到另一门的开课信息，因为你没有订阅。
+
 5. 适配器模式
 6. 策略模式
 7. 迭代器模式
