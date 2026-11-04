@@ -388,6 +388,83 @@ React18 自动批处理，统一做 state 合并。
 > 高阶组件[higher order component]是一个以组件为参数并返回一个新组件的函数。HOC 运行你重用代码、逻辑和引导抽象。最常见的可能是 Redux 的 connect 函数。除了简单分享工具库和简单的组合，HOC 最好的方式是共享 React 组件之间的行为。如果你发现你在不同的地方写了大量代码来做同一件事时，就应该考虑将代码重构为可重用的 HOC。
 
 ### 3. 什么是 react fiber
+
+**解决的痛点**
+React 15 及之前使用 Stack Reconciler，通过递归遍历虚拟 DOM 树来找出需要更新的部分。
+有以下问题：
+1. 递归是同步的、不可中断的
+2. 一旦开始diff，期间是不能响应用户输入的
+3. 组件树深、重时，主线程被长时间占用，页面会卡顿、掉帧
+把一个大任务拆成很多小任务，每个小任务执行完后把控制权交还浏览器。浏览器有机会处理用户输入和渲染；如果还有时间就继续下一个任务，没时间就等下一次空闲。
+
+
+**fiber本质**
+把原来递归的、不可中断的调用栈，改造成一个用*链表*连接的、可以逐个遍历的节点树。
+
+每个fiber节点就是一个工作单元，react可以执行一个fiber节点，然后暂停，记住当前进度，下次从暂停的地方继续
+
+
+
+**fiber的双缓存数：current和workInProgress**
+
+每次更新时，React 从 current 树复制出 workInProgress 树，在 workInProgress 上做 diff 和更新。等整个 workInProgress 树构建完成、进入 Commit 阶段后，再把 root.current 指向 workInProgress 树，完成切换。
+
+用户永远不会看到半成品。Render 阶段即使被中断，屏幕上的 current 树也不受影响
+
+**fiber的两个阶段:Render和Commit**
+
+Render阶段（可中断）
+1. 遍历fiber树、执行组件函数render
+2. 计算 diff，标记副作用（flags）
+3. 构建 workInProgress 树
+
+React 用自己实现的调度器（Scheduler）分配时间片，每个时间片约 5ms。执行完一个 Fiber 节点后检查是否还有剩余时间。(参考了浏览器api requestIdleCallback)
+
+
+Commit阶段（不可中断）
+1. 执行 componentDidMount / componentDidUpdate / useLayoutEffect
+2. 插入、更新、删除 DOM 节点
+3. 切换root.current指针
+
+**优先级调度：Lane模型**
+Fiber 不仅要能中断，还要知道哪些更新更紧急。React 用 Lane（车道）模型表示优先级
+
+| Lane | 场景 | 优先级 |
+|---|---|---|
+| `SyncLane` | 用户输入、点击事件 | 最高 |
+| `InputContinuousLane` | 拖拽、滚动 | 高 |
+| `DefaultLane` | 普通 `setState` | 中 |
+| `TransitionLane` | `startTransition` 标记的更新 | 低 |
+| `IdleLane` | 空闲时才做的更新 | 最低 |
+
+> 说明：不同优先级的更新会被分配到不同的 Lane，调度器优先处理高优先级 Lane，低优先级更新可以被打断或延后。这是 React 18 并发特性（`useTransition`、`useDeferredValue`）的底层基础。
+
+
+```javascript
+
+class FiberNode {
+  constructor(tag, pendingProps, key) {
+    this.tag = tag;                   // 节点类型：FunctionComponent、ClassComponent、HostComponent 等
+    this.key = key;
+    this.pendingProps = pendingProps; // 新的 props
+    this.memoizedProps = null;        // 上一次渲染的 props
+    this.memoizedState = null;        // 上一次渲染的 state（Hooks 链表挂在这里）
+    this.stateNode = null;            // 对应的真实 DOM 节点或类组件实例
+
+    // —— 链表结构，这是可中断遍历的关键 ——
+    this.return = null;               // 父节点
+    this.child = null;                // 第一个子节点
+    this.sibling = null;              // 下一个兄弟节点
+    this.index = 0;
+
+    // —— 副作用标记 ——
+    this.flags = 0;                   // Placement、Update、Deletion 等
+    this.subtreeFlags = 0;            // 子树中是否有副作用
+    this.alternate = null;            // 指向另一棵树的对应节点（双缓存）
+  }
+}
+```
+
 React16 引入 Fiber 架构，把大的渲染任务拆分成多个小任务，可中断、可恢复，解决同步渲染长时间阻塞主线程问题。
 
 ### 4. hooks 原理
@@ -398,38 +475,12 @@ Hooks 依靠链表保存状态，函数组件每次执行按顺序读取 hooks�
 核心概念：Action、Reducer、Store、View。
 流程：View dispatch (action) → reducer 计算新 state → store 更新 → view 获取最新 state 渲染。
 ### 6. diff 算法实现
-React Diff 只比较同层节点；key 用来做节点复用；类型不同直接销毁重建；列表 diff 通过 key 做移动、删除、新增优化。
+- 只比较同层节点；
+- key 用来做节点复用；
+- 类型不同直接销毁重建；
+列表 diff 通过 key 做移动、删除、新增优化。
 
-### 7. fiber 原理与实现
-
-```js
-// 三个原则
-// 单一事实来源：整个应用的状态存储在单个 store 中的对象/状态树里。单一状态树可以更容易地跟踪随时间的变化，并调试或检查应用程序。
-// 状态是只读的：改变状态的唯一方法是去触发一个动作。动作是描述变化的普通 JS 对象。就像 state 是数据的最小表示一样，该操作是对数据更改的最小表示。
-// 使用纯函数进行更改：为了指定状态树如何通过操作进行转换，你需要纯函数。纯函数是那些返回值仅取决于其参数值的函数。
-
-// redux的组件
-// Action – 这是一个用来描述发生了什么事情的对象。
-// Reducer – 这是一个确定状态将如何变化的地方。
-// Store – 整个程序的状态/对象树保存在Store中。
-// View – 只显示 Store 提供的数据。
-
-// 定义action
-// React 中的 Action 必须具有 type 属性，该属性指示正在执行的 ACTION 的类型。必须将它们定义为字符串常量，并且还可以向其添加更多的属性。在 Redux 中，action 被名为 Action Creators 的函数所创建。以下是 Action 和Action Creator 的示例：
-function addTodo(text) {
-  return {
-    type: ADD_TODO,
-    text,
-  }
-}
-// 简述
-// redux 是一个应用数据流框架，主要是解决了组件间状态共享的问题，原理是集中式管理，主要有三个核心方法，action，store，reducer，
-// 工作流程是 view 调用 store 的 dispatch 接收 action 传入 store，reducer 进行 state 操作，view 通过 store 提供的 getState 获取最新的数据，
-// flux 也是用来进行数据操作的，有四个组成部分 action，dispatch，view，store，工作流程是 view 发出一个 action，派发器接收 action，让 store 进行数据更新，更新完成以后 store 发出 change，view 接受 change 更新视图。Redux 和 Flux 很像。主要区别在于 Flux 有多个可以改变应用状态的 store，在 Flux 中 dispatcher 被用来传递数据到注册的回调事件，但是在 redux 中只能定义一个可更新状态的 store，redux 把 store 和 Dispatcher 合并,结构更加简单清晰
-// 新增 state,对状态的管理更加明确，通过 redux，流程更加规范了，减少手动编码量，提高了编码效率，同时缺点时当数据更新时有时候组件不需要，但是也要重新绘制，有些影响效率。一般情况下，我们在构建多交互，多数据流的复杂项目应用时才会使用它们
-```
-
-### 8. vue和react的根本区别
+### 7. vue和react的根本区别
 
 - vue：声明式、模板语法、响应式（劫持数据，读取时收集依赖，修改时通知对应依赖更新。）
 - react：jsx、不可变状态 + 重新执行组件函数
