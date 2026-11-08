@@ -1,6 +1,6 @@
 ---
 layout: false
-title: Laine — Portfolio / 技术蓝图
+title: Laine — 作品集 / 技术蓝图
 titleTemplate: false
 description: Laine 的作品集：前端组件库、内容产品、小程序与技术博客，六个项目的工程档案。
 navbar: false

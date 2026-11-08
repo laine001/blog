@@ -1,90 +1,129 @@
 <script setup lang="ts">
-interface Project {
-  no: string
-  name: string
-  kind: string
-  desc: string
-  tags: string[]
-  status: string
-  pending?: boolean
-  url?: string
-  host: string
-  tone: { bg: string; a: string; b: string; leaf: string }
+import {
+  projects as sourceProjects,
+  type ProjectType,
+  type ProjectStatus,
+} from '../../data/portfolio'
+import { nextTick, ref } from 'vue'
+import { withBase } from 'vitepress'
+
+interface OrganicTone { bg: string; a: string; b: string; leaf: string }
+
+/** 柔和有机皮肤：分类文案与标签，按语义类型映射 */
+const typeText: Record<ProjectType, { kind: string; tags: string[] }> = {
+  'component-library': { kind: '组件库', tags: ['Vue 3', 'Monorepo', '开源'] },
+  documentation: { kind: '文档 / 内容', tags: ['内容', 'SEO', '知识库'] },
+  catalog: { kind: '实用工具', tags: ['emoji', '本地收藏', '目录'] },
+  'mini-program': { kind: '小程序', tags: ['微信', '分享', '资源'] },
+  writing: { kind: '写作 / VitePress', tags: ['VitePress', 'Markdown', '静态站点'] },
+  data: { kind: '数据 / 检索', tags: ['查询', '数据'] },
+}
+
+const statusText: Record<ProjectStatus, string> = {
+  live: '已上线',
+  'no-link': '暂无外链',
+  tbd: '待补充',
+}
+
+/** 六张卡插画带的配色，属于皮肤资产，不进内容数据源 */
+const tones: Record<string, OrganicTone> = {
+  '01': { bg: '#F6E7D8', a: '#E9B993', b: '#7C8B6B', leaf: '#A34E2E' },
+  '02': { bg: '#E7ECDF', a: '#B7C4A6', b: '#C4633F', leaf: '#4F6142' },
+  '03': { bg: '#F8E9D9', a: '#EFD0A8', b: '#C4633F', leaf: '#3A2E28' },
+  '04': { bg: '#E3EDE9', a: '#A9C6BC', b: '#E0A87C', leaf: '#4F6142' },
+  '05': { bg: '#EFE6D6', a: '#CBBBA0', b: '#7C8B6B', leaf: '#A34E2E' },
+  '06': { bg: '#EDE8E2', a: '#CFC4B8', b: '#C4633F', leaf: '#6F5D50' },
+}
+
+const projects = sourceProjects.map((p) => ({
+  ...p,
+  ...typeText[p.type],
+  tone: tones[p.no],
+  status: statusText[p.status],
+  shots: p.shots?.map((s) => ({ ...s, src: withBase(s.src) })),
+}))
+
+/* 详情层用原生 <dialog>：Esc、焦点陷阱、背景遮罩交给浏览器处理 */
+const detailOpen = ref(false)
+const detailDialog = ref<HTMLDialogElement | null>(null)
+const detailProject = ref<(typeof projects)[number] | null>(null)
+let lastTrigger: HTMLElement | null = null
+let closing = false
+
+async function openDetail(p: (typeof projects)[number], e: Event) {
+  lastTrigger = e.currentTarget as HTMLElement
+  detailProject.value = p
+  detailOpen.value = true
+  await nextTick()
+  const dlg = detailDialog.value
+  if (!dlg) return
+  dlg.classList.remove('is-closing')
+  closing = false
+  if (typeof dlg.showModal === 'function') dlg.showModal()
+  else dlg.setAttribute('open', '')
+}
+
+/* 原生 close() 会立刻移除 open 使元素 display:none，退场动画必须先播完再关闭 */
+function prefersReducedMotion() {
+  return typeof window !== 'undefined'
+    && typeof window.matchMedia === 'function'
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+}
+
+/** 压缩后 CSS 变量可能是 `.2s` / `0.2s` / `200ms`，统一换算成毫秒 */
+function readOutMs(dlg: HTMLDialogElement) {
+  const raw = getComputedStyle(dlg).getPropertyValue('--dlg-out').trim()
+  const n = Number.parseFloat(raw)
+  if (!Number.isFinite(n) || n <= 0) return 200
+  return raw.endsWith('ms') ? n : n * 1000
+}
+
+function actuallyClose(dlg: HTMLDialogElement) {
+  if (typeof dlg.close === 'function') dlg.close()
+  else {
+    dlg.removeAttribute('open')
+    onDialogClose()
+  }
+}
+
+function closeDetail() {
+  const dlg = detailDialog.value
+  if (!dlg || closing || !dlg.open) return
+  if (prefersReducedMotion()) {
+    actuallyClose(dlg)
+    return
+  }
+  closing = true
+  dlg.classList.add('is-closing')
+  // 时长由样式里的 --dlg-out 单一提供，避免 JS 与 CSS 各写一份而不同步
+  const ms = readOutMs(dlg)
+  window.setTimeout(() => {
+    actuallyClose(dlg)
+    dlg.classList.remove('is-closing')
+    closing = false
+  }, ms)
+}
+
+/* Esc 会触发 cancel 并直接关闭，拦下来让退场动画也生效 */
+function onDialogCancel(e: Event) {
+  e.preventDefault()
+  closeDetail()
+}
+
+function onDialogClose() {
+  detailOpen.value = false
+  detailProject.value = null
+  lastTrigger?.focus()
+}
+
+function onBackdropClick(e: MouseEvent) {
+  if (e.target === detailDialog.value) closeDetail()
 }
 
 const about = [
   { key: '方向', value: '前端 · 视觉' },
   { key: '常用', value: 'Vue 3 · VitePress' },
   { key: '更新', value: '2026.11' },
-]
-
-const projects: Project[] = [
-  {
-    no: '01',
-    name: 'ikunui',
-    kind: '组件库',
-    desc: '基于 Vue 3 与 monorepo 的前端 UI 组件库，GitHub 100+ star。从组件设计到仓库工程化一并自己搭。',
-    tags: ['Vue 3', 'Monorepo', '开源'],
-    status: '已上线',
-    url: 'https://laine001.github.io/ikun-ui/',
-    host: 'laine001.github.io/ikun-ui',
-    tone: { bg: '#F6E7D8', a: '#E9B993', b: '#7C8B6B', leaf: '#A34E2E' },
-  },
-  {
-    no: '02',
-    name: 'ITPMP',
-    kind: '文档 / 内容',
-    desc: '软考高项的系统化文档记录与总结，长期整理、持续更新，在 Google / Bing 相关检索中排在前列。',
-    tags: ['内容', 'SEO', '知识库'],
-    status: '已上线',
-    url: 'https://itpmp.cc/',
-    host: 'itpmp.cc',
-    tone: { bg: '#E7ECDF', a: '#B7C4A6', b: '#C4633F', leaf: '#4F6142' },
-  },
-  {
-    no: '03',
-    name: 'emoji 博物馆',
-    kind: '实用工具',
-    desc: '完整收录 emoji，支持一键复制与本地收藏。把零散的符号整理成一份可检索、可带走的清单。',
-    tags: ['剪贴板', '本地收藏', '目录'],
-    status: '已上线',
-    url: 'https://emoji.ikuncool.top/',
-    host: 'emoji.ikuncool.top',
-    tone: { bg: '#F8E9D9', a: '#EFD0A8', b: '#C4633F', leaf: '#3A2E28' },
-  },
-  {
-    no: '04',
-    name: '资源分享小程序',
-    kind: '小程序',
-    desc: '按品类收录多种资源，支持一键分享、免费获取。面向微信场景的轻量工具，扫码即可用。',
-    tags: ['微信', '分享', '资源'],
-    status: '暂无外链',
-    pending: true,
-    host: '小程序内访问 / 暂无外链',
-    tone: { bg: '#E3EDE9', a: '#A9C6BC', b: '#E0A87C', leaf: '#4F6142' },
-  },
-  {
-    no: '05',
-    name: '个人博客',
-    kind: '写作 / VitePress',
-    desc: '长期记录前端、算法与生活的技术博客。基于 VitePress，自定义主题、组件与动效，也是这个页面所在的地方。',
-    tags: ['VitePress', 'Markdown', '静态站点'],
-    status: '已上线',
-    url: 'https://blog.ikuncool.top/',
-    host: 'blog.ikuncool.top',
-    tone: { bg: '#EFE6D6', a: '#CBBBA0', b: '#7C8B6B', leaf: '#A34E2E' },
-  },
-  {
-    no: '06',
-    name: '原研药查询',
-    kind: '数据 / 检索',
-    desc: '名称已登记，项目简介与访问地址待补充。',
-    tags: ['查询', '数据'],
-    status: '待补充',
-    pending: true,
-    host: 'LINK PENDING',
-    tone: { bg: '#EDE8E2', a: '#CFC4B8', b: '#C4633F', leaf: '#6F5D50' },
-  },
 ]
 </script>
 
@@ -190,6 +229,15 @@ const projects: Project[] = [
                   <span class="host">{{ p.host }}</span>
                   <span class="go">访问 <span aria-hidden="true">↗</span></span>
                 </a>
+                <button
+                  v-else-if="p.shots?.length"
+                  type="button"
+                  class="card-link is-detail"
+                  @click="openDetail(p, $event)"
+                >
+                  <span class="host">{{ p.host }}</span>
+                  <span class="go">详情 <span aria-hidden="true">↗</span></span>
+                </button>
                 <div v-else class="card-link is-disabled">
                   <span class="host">{{ p.host }}</span>
                   <span class="go" aria-hidden="true">—</span>
@@ -208,6 +256,39 @@ const projects: Project[] = [
         </div>
       </footer>
     </div>
+
+    <dialog
+      ref="detailDialog"
+      class="detail"
+      aria-labelledby="detail-title-organic"
+      @close="onDialogClose"
+      @cancel="onDialogCancel"
+      @click="onBackdropClick"
+    >
+      <div v-if="detailOpen && detailProject" class="detail-inner">
+        <div class="detail-head">
+          <div>
+            <span class="detail-tag">作品 {{ detailProject.no }} / 截图</span>
+            <h2 id="detail-title-organic">{{ detailProject.name }}</h2>
+          </div>
+          <button type="button" class="detail-close" aria-label="关闭详情" @click="closeDetail">
+            <span aria-hidden="true">×</span> 关闭
+          </button>
+        </div>
+        <div class="detail-body">
+          <p class="detail-desc">{{ detailProject.desc }}</p>
+          <p class="detail-note">以下为界面示意，正式截图待替换。</p>
+          <ul class="shots">
+            <li v-for="(s, i) in detailProject.shots ?? []" :key="s.src" class="shot">
+              <figure>
+                <img :src="s.src" :alt="s.alt" width="260" height="520" loading="lazy" decoding="async" />
+                <figcaption><span>{{ String(i + 1).padStart(2, '0') }}</span> {{ s.caption }}</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </dialog>
   </div>
 </template>
 
@@ -242,7 +323,7 @@ const projects: Project[] = [
   .portfolio2-root *, .portfolio2-root *::before, .portfolio2-root *::after { box-sizing: border-box; }
 
   a { color: inherit; }
-  a:focus-visible { outline: 2px solid var(--terra-deep); outline-offset: 2px; border-radius: 999px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--terra-deep); outline-offset: 2px; border-radius: 999px; }
 
   .wrap { max-width: 1120px; margin: 0 auto; }
 
@@ -503,7 +584,7 @@ const projects: Project[] = [
   .card h3 { margin: 16px 0 2px; font-size: 22px; font-weight: 400; line-height: 1.35; }
   .kind { margin: 0; font-family: var(--sans); font-size: 11.5px; letter-spacing: .06em; color: var(--terra-deep); }
   .desc { margin: 14px 0 0; font-size: 13px; line-height: 1.85; color: var(--ink-soft); }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0 0 16px; list-style: none; }
   .tags li {
     padding: 4px 11px;
     border: .5px solid var(--line);
@@ -530,6 +611,87 @@ const projects: Project[] = [
   .card-link:hover .go { transform: translate(3px, -2px); }
   .card-link.is-disabled { border-top-style: dashed; cursor: default; }
   .card-link.is-disabled .go { color: var(--line); }
+  .card-link.is-detail {
+    width: 100%;
+    border: 0;
+    border-top: .5px solid var(--line);
+    background: none;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .card-link.is-detail:hover { border-top-color: var(--terra-deep); }
+
+  /* ---------- 详情层（原生 dialog） ---------- */
+  .detail {
+    --dlg-out: 200ms;
+    width: min(92vw, 760px);
+    max-height: min(88vh, 860px);
+    padding: 0;
+    border: .5px solid var(--line);
+    border-radius: 24px;
+    background: var(--card);
+    color: var(--ink);
+    font-family: var(--sans);
+    overflow: auto;
+    animation: dialog-in-organic 260ms cubic-bezier(.22, 1, .36, 1) both;
+  }
+  .detail::backdrop { background: rgba(58, 46, 40, .38); animation: backdrop-in 260ms ease-out both; }
+  .detail.is-closing { animation: dialog-out-organic var(--dlg-out) ease-in both; }
+  .detail.is-closing::backdrop { animation: backdrop-out var(--dlg-out) ease-in both; }
+  /* 内容只淡入：translateY 会被 overflow:auto 计入可滚动范围，入场时闪出滚动条 */
+  .detail-inner { animation: detail-fade 260ms 70ms both; }
+  .detail-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px 16px;
+    background: var(--card);
+    border-bottom: .5px solid var(--line);
+  }
+  .detail-tag { font-size: 11px; letter-spacing: .1em; color: var(--terra-deep); }
+  .detail-head h2 { margin: 10px 0 0; font-family: var(--serif); font-size: 24px; font-weight: 400; }
+  .detail-close {
+    flex: none;
+    min-height: 44px;
+    padding: 0 18px;
+    border: .5px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .detail-close:hover { border-color: var(--terra-deep); background: var(--cream); }
+  .detail-close span { margin-right: 6px; font-size: 16px; }
+  .detail-body { padding: 20px 24px 28px; }
+  .detail-desc { margin: 0; font-family: var(--serif); font-size: 13.5px; line-height: 1.85; color: var(--ink-soft); }
+  .detail-note { margin: 12px 0 0; font-size: 11px; color: var(--terra-deep); }
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .shot { min-width: 0; }
+  .shot figure { margin: 0; border: .5px solid var(--line); border-radius: 16px; overflow: hidden; background: #FFFFFF; }
+  .shot img { display: block; width: 100%; height: auto; aspect-ratio: 260 / 520; object-fit: cover; }
+  .shot figcaption {
+    padding: 10px 12px;
+    border-top: .5px solid var(--line);
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+  .shot figcaption span { margin-right: 8px; color: var(--terra-deep); }
 
   /* ---------- 页脚 ---------- */
   .foot { padding-top: clamp(56px, 8vw, 88px); }
@@ -554,6 +716,20 @@ const projects: Project[] = [
   .foot-row p span { margin-left: 14px; opacity: .8; }
   .foot-row a { text-decoration: none; letter-spacing: .06em; color: var(--terra-deep); }
 
+  /* 柔和浮起：只动 opacity / transform，走合成层，不触发重排 */
+  @keyframes dialog-in-organic {
+    from { opacity: 0; transform: translateY(16px) scale(.96); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes dialog-out-organic {
+    from { opacity: 1; transform: none; }
+    to { opacity: 0; transform: translateY(10px) scale(.98); }
+  }
+  @keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes backdrop-out { from { opacity: 1; } to { opacity: 0; } }
+
+  @keyframes detail-fade { from { opacity: 0; } to { opacity: 1; } }
+
   @keyframes rise {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: none; }
@@ -574,11 +750,15 @@ const projects: Project[] = [
     .about { padding: 20px; }
     .card-art { height: 120px; }
     .foot-row p span { display: block; margin: 4px 0 0; }
+    .shots { grid-template-columns: 1fr; }
+    .detail-head, .detail-body { padding-left: 16px; padding-right: 16px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .portfolio2-root *, .portfolio2-root *::before, .portfolio2-root *::after {
       animation: none !important;
       transition: none !important;
     }
+    /* ::backdrop 不是元素后代，通配选择器覆盖不到，需单独关掉 */
+    .detail::backdrop { animation: none !important; }
   }
 </style>

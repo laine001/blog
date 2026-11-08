@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 520" width="260" height="520" role="img" aria-label="资源分享小程序首页占位图">
+  <rect width="260" height="520" fill="#FBFCFD"/>
+  <rect x="10" y="10" width="240" height="500" rx="20" fill="#FFFFFF" stroke="#C9D6E4" stroke-width="1.5"/>
+  <text x="30" y="40" font-family="ui-monospace, monospace" font-size="9" fill="#4C5E78">9:41</text>
+  <rect x="196" y="31" width="34" height="10" rx="5" fill="#E8EDF3"/>
+  <text x="30" y="78" font-family="system-ui, Microsoft YaHei, sans-serif" font-size="15" font-weight="600" fill="#1F3A5F">资源分享</text>
+  <rect x="24" y="90" width="212" height="1" fill="#E8EDF3"/>
+  <rect x="26" y="102" width="208" height="30" rx="6" fill="#F3F6FA" stroke="#E8EDF3"/>
+  <rect x="38" y="112" width="96" height="9" rx="3" fill="#DDE4EC"/>
+  <g fill="#F3F6FA" stroke="#E8EDF3">
+    <rect x="26" y="146" width="64" height="64" rx="8"/>
+    <rect x="98" y="146" width="64" height="64" rx="8"/>
+    <rect x="170" y="146" width="64" height="64" rx="8"/>
+    <rect x="26" y="218" width="64" height="64" rx="8"/>
+    <rect x="98" y="218" width="64" height="64" rx="8"/>
+    <rect x="170" y="218" width="64" height="64" rx="8"/>
+  </g>
+  <g fill="#DDE4EC">
+    <rect x="42" y="176" width="32" height="8" rx="3"/>
+    <rect x="114" y="176" width="32" height="8" rx="3"/>
+    <rect x="186" y="176" width="32" height="8" rx="3"/>
+    <rect x="42" y="248" width="32" height="8" rx="3"/>
+    <rect x="114" y="248" width="32" height="8" rx="3"/>
+    <rect x="186" y="248" width="32" height="8" rx="3"/>
+  </g>
+  <rect x="26" y="298" width="208" height="1" fill="#E8EDF3"/>
+  <rect x="26" y="312" width="130" height="10" rx="4" fill="#DDE4EC"/>
+  <rect x="26" y="334" width="208" height="46" rx="8" fill="#F3F6FA" stroke="#E8EDF3"/>
+  <rect x="26" y="392" width="208" height="46" rx="8" fill="#F3F6FA" stroke="#E8EDF3"/>
+  <rect x="26" y="462" width="208" height="1" fill="#E8EDF3"/>
+  <circle cx="130" cy="488" r="9" fill="#E8EDF3"/>
+  <rect x="30" y="222" width="200" height="86" rx="3" fill="#FFFFFF" stroke="#FF6B35" stroke-width="1.5"/>
+  <text x="130" y="254" text-anchor="middle" font-family="system-ui, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" fill="#1F3A5F">占 位 图</text>
+  <text x="130" y="275" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#4C5E78">PLACEHOLDER · FIG.01</text>
+  <text x="130" y="293" text-anchor="middle" font-family="system-ui, Microsoft YaHei, sans-serif" font-size="9" fill="#4C5E78">待替换为真实截图</text>
+</svg>

@@ -20,7 +20,7 @@
     "vitepress": "1.6.4"
   },
   "scripts": {
-    "docs:dev": "vitepress dev blog",
+    "dev": "vitepress dev blog",
     "docs:build": "vitepress build blog",
     "docs:preview": "vitepress preview blog",
     "netlify:build": "vitepress build blog --env=netlify",
