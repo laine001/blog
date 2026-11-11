@@ -1,6 +1,8 @@
 # 前端知识点总结
 
 
+<br />
+
 <img class="post-img" src="https://www4.bing.com//th?id=OHR.PontdArcole_ZH-CN5348049357_1920x1080.jpg&rf=LaDigue_1920x1080.jpg" />
 
 ## js/浏览器
